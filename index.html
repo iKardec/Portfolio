@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Alan Kardec Lima Campos Júnior">
+  <link rel="shortcut icon" href="MIDIAS/KardNexus.ico" type="image/x-icon">
+  <title>Portfólio - Alan Kardec</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Sora:wght@300;400;500;600;700;800&family=Urbanist:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header" id="mainHeader">
+    <div class="header-content">
+      <h1>
+        <span class="name-primary">ALAN KARDEC</span>
+        <span class="name-secondary">Lima Campos Júnior</span>
+      </h1>
+      <p class="subtitle">Portfólio Profissional</p>
+    </div>
+    <nav class="tab-navigation" id="tabNavigation">
+      <button class="tab-btn" onclick="showSection('engenharia')" data-icon="🗂️">
+        <span class="icon">🗂️</span>
+        <span class="label">Engenharia Civil</span>
+      </button>
+      <button class="tab-btn" onclick="showSection('gastronomia')" data-icon="🍽️">
+        <span class="icon">🍽️</span>
+        <span class="label">Atendimento e Gastronomia</span>
+      </button>
+      <button class="tab-btn" onclick="showSection('programacao')" data-icon="💻">
+        <span class="icon">💻</span>
+        <span class="label">Programação e T.I</span>
+      </button>
+      <button class="tab-btn" onclick="showSection('administrativo')" data-icon="📋">
+        <span class="icon">📋</span>
+        <span class="label">Área Administrativa</span>
+      </button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <!-- Página de Boas-vindas -->
+    <div id="welcome" class="content-section" style="display: block;">
+      <div class="welcome-card">
+        <div class="welcome-header">
+          <div class="welcome-icon">👋</div>
+          <h2>Bem-vindo!</h2>
+        </div>
+        
+        <div class="welcome-intro-box">
+          <p class="subtitle">Minha experiência pode ser um pouco maior do que parece, então <span class="destaque">programei</span> este site para me apresentar melhor...</p>
+        </div>
+
+        <div class="welcome-image-container">
+          <img src="MIDIAS/imagem_intro.jpg" alt="Alan Kardec Lima Campos Júnior" class="welcome-image">
+        </div>
+
+        <div class="custom-text-box">
+          <p>Sou um profissional versátil com formação Técnica em Edificações pelo IFBA e experiência em diversas áreas como T.I, Administração, Integração e suporte de soluções para empresas e demais possíveis qualidades demandadas. Este portfólio foi desenvolvido para apresentar minhas competências técnicas, experiências profissionais e projetos de forma mais organizada e interativa. <span class="destaque-dois">Navegue pelas abas acima para conhecer mais sobre cada área de atuação!</span></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Engenharia Civil -->
+    <div id="engenharia" class="content-section" style="display: none;">
+      <div class="section-header">
+        <h2>Engenharia Civil</h2>
+        <div class="divider"></div>
+        <a href="DOWNLOADS/curriculo_eng_alan_kardec.pdf" download class="download-btn">
+          <span class="download-icon">📄</span>
+          Baixar Currículo (PDF)
+        </a>
+      </div>
+      <div class="content-card">
+        <div class="info-block">
+          <h3>Formação Acadêmica</h3>
+          <div class="timeline-item">
+            <div class="timeline-year">2024 - Cursando</div>
+            <div class="timeline-content">
+              <h4>UFBA - Universidade Federal da Bahia</h4>
+              <p>Bacharelado Interdisciplinar de Ciências e Tecnologia</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2020 - 2023</div>
+            <div class="timeline-content">
+              <h4>IFBA - Instituto Federal da Bahia</h4>
+              <p>Ensino Técnico em Edificações</p>
+              <p class="detail">Redigi um TCC em formato de artigo científico e produzi um software funcional para dimensionamento de uso de fibra de carbono</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-block">
+          <h3>Experiência Profissional</h3>
+          <div class="timeline-item">
+            <div class="timeline-year">2024.2</div>
+            <div class="timeline-content">
+              <h4>Lessa Engenharia</h4>
+              <p class="position">Mestre de Obras e Auxiliar Administrativo</p>
+              <p class="description">Atuei na área administrativa e gestacional de uma obra de restauração de um edifício de 4 andares realizada na Pituba.
+              Geria ordens primárias e secundárias relacionadas à obra, solicitava itens necessários e liderava ao lado de outro mestre de obras a equipe responsável pela execução da mesma.
+              Organizei a gestão do almoxarifado e as demais atualizações.
+              Diariamente atualizava o diário de obras de todas as atividades realizadas por cada profissional envolvido.
+              Direcionava algumas tomadas de decisões e tomei responsabilidade para vários problemas emergenciais.
+              Auxiliei ativamente na área intercomunicativa entre a obra e o escritório de engenharia.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2024.2</div>
+            <div class="timeline-content">
+              <h4>Tesseract Engenharia</h4>
+              <p class="position">Técnico em Edificações</p>
+              <p class="description">Atuei no registro de atualizações cadastrais e do estabelecimento de registros elétricos para a SEDUR de escolas públicas, desde a visita laboral até a elaboração das plantas.
+              Realizei a revisão, verificação e correção de pranchas estruturais.
+              Elaborei planilhas orçamentárias de obras.
+              Auxiliei ativamente na gestão da otimização do ambiente digital e da integralização do escritório.
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-year">2024.1</div>
+            <div class="timeline-content">
+              <h4>Projekt Engenharia</h4>
+              <p class="position">Estagiário de Edificações</p>
+              <p class="description">Atuei na elaboração de Projetos Estruturais utilizando o AutoCad
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-year">2023.1</div>
+            <div class="timeline-content">
+              <h4>Paulo Braga Projetos Estruturais e Consultoria S/S Ltda</h4>
+              <p class="position">Estagiário de Edificações</p>
+              <p class="description">Atuei trabalhando no desenho de projetos de formas e armaduras utilizando AutoCAD e TQS.
+              Trabalhei com o detalhamento de curvas, desenho e refinamento de plantas de um projeto de parque aquático.
+              Também aprendi e trabalhei um pouco com desenho estrutural.
+            </div>
+          </div>
+        </div>
+        <div class="info-block">
+          <h3>Competências Técnicas</h3>
+          <ul class="skills-list">
+            <li>Elaboração de projetos estruturais</li>
+            <li>Detalhamento técnico em AutoCAD</li>
+            <li>Softwares de engenharia especializados</li>
+            <li>Redação técnica e científica</li>
+            <li>Alta adaptabilidade a tecnologias novas</li>
+            <li>Integração e desenvolvimento de novas soluções</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Atendimento / Gastronomia -->
+    <div id="gastronomia" class="content-section" style="display: none;">
+      <div class="section-header">
+        <h2>Atendimento ao Público e Gastronomia</h2>
+        <div class="divider"></div>
+        <a href="DOWNLOADS/curriculo_atend_alan_kardec.pdf" download class="download-btn">
+          <span class="download-icon">📄</span>
+          Baixar Currículo (PDF)
+        </a>
+      </div>
+      <div class="content-card">
+          <div class="info-block">
+            <h3>Síntese Geral</h3>
+          </div>
+        <p class="intro-text">
+          Alta experiência com atendimento ao cliente e <span class="destaque">CERTEZA</span> do recebimento de um excelente feedback em pouquíssimo tempo. Prezo muito pelo bom tratamento, hospitalidade e serviços internos e externos no setor de restaurantes e bares, com atuação em diversos estabelecimentos prezando pela agilidade, cordialidade e organização.
+        </p>
+        <div class="info-block">
+          <h3>Áreas de Atuação</h3>
+            <div class="experience-card">
+              <h4>Atendimento ao Cliente</h4>
+              <p>Sem dúvidas a gestão de relacionamento com clientes é um dos fatores mais importantes a se investir quando pensamos em captação e conversão de tráfego. Foi pensando nisso que eu decidi investir muito em minhas Soft Skills e em ser extremamente respeitoso e volátil para manter o controle em qualquer situação.</p>
+            </div>
+            <div class="experience-grid">
+              <div class="experience-card">
+                <h4>Serviços com Coquetelaria</h4>
+                <p>Trabalhei como barman em agências como a Gipsy Drinks, em diversos aniversários e eventos avulsos como em baladas. Possuo conhecimento avançado em mixologia e também com a alta demanda de restaurantes e bares.</p>
+              </div>
+              <div class="experience-card">
+                <h4>Auxiliar de Cozinha</h4>
+                <p>Desde pequeno fui fascinado pela arte de cozinhar, não pude deixar de trabalhar em restaurantes, pizzarias e confeitarias também dentro da cozinha claro! Tenho um vasto leque de conhecimentos culinários, mas realmente prefiro ressaltar minha adaptabilidade e percepção a lidar bem com o novo.</p>
+              </div>
+          </div>
+        </div>
+
+        <div class="info-block">
+          <h3>Competências</h3>
+          <ul class="skills-list">
+
+            <li>Altíssimo grau de adaptabilidade e de aprendizado</li>
+            <li>Excelente comunicação interpessoal</li>
+            <li>Trabalho em equipe mesmo sob pressão</li>
+            <li>Organização e gestão de tempo</li>
+            <li>Dedicação com o cliente e alta capacidade de resolução de problemas</li>
+            <li>Carisma e alta capacidade de controlar situações difíceis </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Projetos de Programação -->
+    <div id="programacao" class="content-section" style="display: none;">
+      <div class="section-header">
+        <h2>Programação e T.I</h2>
+        <div class="divider"></div>
+          <a href="https://github.com/iKardec" target="_blank" class="download-btn">
+          <img src="MIDIAS/github-mark.ico" class="botao-git">
+          Visitar GithHub
+        </a>
+          </div>  
+          <div class="content-card">
+            <div class="info-block">
+              <h3>Formação Acadêmica</h3>
+              <div class="timeline-item">
+                <div class="timeline-year">2024 - Cursando</div>
+                <div class="timeline-content">
+                  <h4>UFBA - Universidade Federal da Bahia</h4>
+                  <p>Bacharelado Interdisciplinar de Ciências e Tecnologia</p>
+                  <p class="detail"> Ênfase em Matemática e Programação BackEnd</p>
+                </div>
+              </div>
+        <div class="info-block">
+          <h3>Projetos e Experiências</h3>
+                <p class="intro-text">
+                Comecei a editar nos programas da Adobe (Photoshop e Premiere) juntamente quando comecei a programar em HTML4 desde 2013, dei início aos estudos bem novo e aos poucos, com o tempo fui estudando mais e fazendo alguns pequenos projetos em JS em meados de 2019, sempre mesclando com cálculos na área de engenharia civil. <br> <br>
+                Mas foi em 2023 que desenvolvi meu primeiro software, um aplicativo inteiro programado exclusivamente em Python, disponível no meu <a href="https://github.com/iKardec" target="_blank" style="color: orange;">GitHub</a>, o RFCC, um programa que compara dois métodos de dimensionamento de aplicação de fibra de carbono em vigas com o objetivo de reforça-las sem necessidade de uma nova super-estrutura e também economizar o máximo sem perder segurança, já que trata-se de um material bastante custoso. <br> <br>
+                Após o RFCC, comecei a estudar outras linguagens mais a fundo, como JS e GML, desenvolvi alguns pequenos projetos de jogos e continuo sempre expandindo meus horizontes.
+                </p>
+            </div>
+          <h3>Tecnologias</h3>
+          <div class="tech-grid">
+            <div class="tech-card">
+              <h4>Python</h4>
+              <p>Desenvolvimento de aplicações internas e automações.</p>
+            </div>
+            <div class="tech-card">
+              <h4>JavaScript</h4>
+              <p>Projetos Web e aplicações orientadas a objetos.</p>
+            </div>
+            <div class="tech-card">
+              <h4>GML</h4>
+              <p>Desenvolvimento de jogos indies.</p>
+            </div>
+            <div class="tech-card">
+              <h4>Web Development</h4>
+              <p>HTML, CSS e JavaScript para desenvolvimento web.</p>
+            </div>
+            <div class="tech-card">
+              <h4>Ecossitema AudioVisual Adobe</h4>
+              <p>Edição de vídeos e imagens através de Photoshop, Premiere e After Effects</p>
+            </div>            
+          </div>
+        </div>
+
+        <div class="info-block">
+          <h3>Áreas de Interesse</h3>
+          <ul class="skills-list">
+            <li>Desenvolvimento de ferramentas</li>
+            <li>Manutenção de sistemas</li>
+            <li>Desenvolvedor BackEnd</li>
+            <li>Desenvolvimento web</li>
+            <li>Desenvolvimento de jogos</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Área Administrativa -->
+    <div id="administrativo" class="content-section" style="display: none;">
+      <div class="section-header">
+        <h2>Área Administrativa</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="content-card">
+        <div class="info-block">
+          <h3>Competências Administrativas</h3> 
+            <p class="intro-text">
+          Tenho uma excelente capacidade de organização e mantenho minhas atividades sempre bem estruturadas. Cumpro prazos com responsabilidade e busco entregar tudo com qualidade. <br><br>
+          Comunico-me de forma clara e consigo lidar bem com diferentes pessoas e situações. <br><br>
+          Sou muito proativo e observador, identifico necessidades com rapidez e gosto de melhorar processos do dia a dia, seja através de disponibilidades práticas, sistêmicas, planilhas ou através de automações. <br><br>
+          Também mantenho sempre uma postura ética, discreta e colaborativa, contribuindo para um ambiente de trabalho produtivo e equilibrado.
+        </p>
+        </div>
+        <div class="info-block">
+          <h3>Síntese de Experiências</h3> 
+            <p class="intro-text">
+              Ao longo da minha trajetória, desenvolvi habilidades administrativas em diferentes contextos, desde ambientes de engenharia até funções operacionais e de atendimento. Atuei em atividades de organização, controle de informações e suporte a equipes, mantendo registros atualizados, realizando revisões documentais e contribuindo para fluxos de trabalho mais eficientes. Em obras, dei suporte administrativo importante na comunicação entre setores, na atualização de relatórios e no acompanhamento de demandas, sempre com atenção aos prazos e às necessidades do projeto. Além disso, adquiri experiência prática em atualização cadastral, elaboração de planilhas, conferência de documentos técnicos e otimização de arquivos digitais. Minhas experiências também incluem atuação em áreas diversas, como audiovisual, serviços gerais, cozinha e instalações, o que me tornou um profissional versátil, adaptável e capaz de lidar com diferentes rotinas, mantendo organização, responsabilidade e proatividade em todas as funções que desempenho.
+        </p>
+        </div>
+        <div class="info-block">
+          <h3>Competências Administrativas</h3>
+          <ul class="skills-list">
+            <li>Organização de documentos e arquivos</li>
+            <li>Suporte operacional a diversos setores</li>
+            <li>Armazenamento e cuidado extremo com manejo de dados</li>
+            <li>Boa comunicação interna e externa</li>
+            <li>Coordenação de projetos</li>
+            <li>Gestão de tempo e prioridades</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 Alan Kardec Lima Campos Júnior</p>
+    <p class="footer-location">Salvador - BA | Brazil</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
