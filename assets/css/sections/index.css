@@ -1,0 +1,8 @@
+/* ============================================================================
+   SECTIONS INDEX - Índice de Seções CSS
+   ============================================================================
+   Este arquivo importa os estilos específicos de cada seção da página.
+   ============================================================================ */
+
+/* Hero section (tela inicial) */
+@import url('hero.css');

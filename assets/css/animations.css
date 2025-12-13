@@ -1,0 +1,771 @@
+/* ============================================================================
+   ANIMATIONS.CSS - Animações e Transições
+   ============================================================================
+   Este arquivo contém:
+   - Keyframes para animações
+   - Efeitos de entrada (fade, slide, scale)
+   - Animações de hover
+   - Efeitos de glow e pulso
+   - Animações de partículas
+   - Cursor personalizado
+   ============================================================================ */
+
+/* ----------------------------------------------------------------------------
+   ANIMAÇÕES DE ENTRADA - FADE
+   ---------------------------------------------------------------------------- */
+
+/* Fade In simples */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Fade In de baixo pra cima */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Fade In de cima pra baixo */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Fade In da esquerda */
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Fade In da direita */
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Classes de aplicação */
+.animate-fade-in {
+    animation: fadeIn 0.6s ease forwards;
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.animate-fade-in-down {
+    animation: fadeInDown 0.6s ease forwards;
+}
+
+.animate-fade-in-left {
+    animation: fadeInLeft 0.6s ease forwards;
+}
+
+.animate-fade-in-right {
+    animation: fadeInRight 0.6s ease forwards;
+}
+
+/* Delays para animações sequenciais */
+.delay-100 {
+    animation-delay: 100ms;
+}
+
+.delay-200 {
+    animation-delay: 200ms;
+}
+
+.delay-300 {
+    animation-delay: 300ms;
+}
+
+.delay-400 {
+    animation-delay: 400ms;
+}
+
+.delay-500 {
+    animation-delay: 500ms;
+}
+
+.delay-600 {
+    animation-delay: 600ms;
+}
+
+.delay-700 {
+    animation-delay: 700ms;
+}
+
+.delay-800 {
+    animation-delay: 800ms;
+}
+
+/* Estado inicial para elementos animados */
+[class*="animate-fade"] {
+    opacity: 0;
+}
+
+/* ----------------------------------------------------------------------------
+   ANIMAÇÕES DE ESCALA
+   ---------------------------------------------------------------------------- */
+
+/* Scale In */
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Scale In com bounce */
+@keyframes scaleInBounce {
+    0% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    70% {
+        transform: scale(0.95);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.animate-scale-in {
+    animation: scaleIn 0.5s ease forwards;
+}
+
+.animate-scale-bounce {
+    animation: scaleInBounce 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+/* ----------------------------------------------------------------------------
+   EFEITOS DE GLOW E PULSO
+   ---------------------------------------------------------------------------- */
+
+/* Pulso de glow */
+@keyframes glowPulse {
+
+    0%,
+    100% {
+        box-shadow:
+            0 0 5px var(--orange-glow-soft),
+            0 0 10px var(--orange-glow-soft);
+    }
+
+    50% {
+        box-shadow:
+            0 0 20px var(--orange-glow-medium),
+            0 0 40px var(--orange-glow-soft);
+    }
+}
+
+/* Pulso de texto com glow */
+@keyframes textGlowPulse {
+
+    0%,
+    100% {
+        text-shadow: 0 0 10px var(--orange-glow-soft);
+    }
+
+    50% {
+        text-shadow:
+            0 0 20px var(--orange-glow-medium),
+            0 0 40px var(--orange-glow-soft);
+    }
+}
+
+/* Pulso de borda */
+@keyframes borderPulse {
+
+    0%,
+    100% {
+        border-color: var(--orange-500);
+    }
+
+    50% {
+        border-color: var(--orange-400);
+    }
+}
+
+/* Classes de aplicação */
+.animate-glow-pulse {
+    animation: glowPulse 3s ease-in-out infinite;
+}
+
+.animate-text-glow {
+    animation: textGlowPulse 3s ease-in-out infinite;
+}
+
+.animate-border-pulse {
+    animation: borderPulse 2s ease-in-out infinite;
+}
+
+/* ----------------------------------------------------------------------------
+   ANIMAÇÃO DE FLUTUAÇÃO
+   ---------------------------------------------------------------------------- */
+
+/* Flutuação suave */
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Flutuação com rotação */
+@keyframes floatRotate {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    25% {
+        transform: translateY(-5px) rotate(2deg);
+    }
+
+    50% {
+        transform: translateY(-10px) rotate(0deg);
+    }
+
+    75% {
+        transform: translateY(-5px) rotate(-2deg);
+    }
+}
+
+.animate-float {
+    animation: float 4s ease-in-out infinite;
+}
+
+.animate-float-rotate {
+    animation: floatRotate 6s ease-in-out infinite;
+}
+
+/* ----------------------------------------------------------------------------
+   ANIMAÇÃO DE ONDA (WAVE)
+   ---------------------------------------------------------------------------- */
+
+@keyframes wave {
+
+    0%,
+    60%,
+    100% {
+        transform: rotate(0deg);
+    }
+
+    10%,
+    30% {
+        transform: rotate(14deg);
+    }
+
+    20% {
+        transform: rotate(-8deg);
+    }
+
+    40% {
+        transform: rotate(-4deg);
+    }
+
+    50% {
+        transform: rotate(10deg);
+    }
+}
+
+.animate-wave {
+    animation: wave 2.5s ease-in-out infinite;
+    transform-origin: 70% 70%;
+}
+
+/* ----------------------------------------------------------------------------
+   ANIMAÇÃO DE TYPING (DIGITAÇÃO)
+   ---------------------------------------------------------------------------- */
+
+/* Cursor piscando */
+@keyframes blink {
+
+    0%,
+    50% {
+        border-color: var(--orange-500);
+    }
+
+    51%,
+    100% {
+        border-color: transparent;
+    }
+}
+
+/* Container do typing effect */
+.typing-container {
+    display: inline-block;
+    position: relative;
+}
+
+/* Texto com efeito typing */
+.typing-text {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid var(--orange-500);
+    animation:
+        typing 3s steps(30) forwards,
+        blink 0.8s step-end infinite;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+/* Múltiplas linhas de typing */
+.typing-text-1 {
+    animation-delay: 0s;
+}
+
+.typing-text-2 {
+    animation-delay: 3s;
+}
+
+.typing-text-3 {
+    animation-delay: 6s;
+}
+
+/* ----------------------------------------------------------------------------
+   ANIMAÇÃO DE PARTÍCULAS (CSS)
+   ---------------------------------------------------------------------------- */
+
+/* Container de partículas */
+.particles-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: var(--z-background);
+}
+
+/* Partícula individual */
+.particle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: var(--orange-500);
+    border-radius: 50%;
+    opacity: 0.3;
+    animation: particleFloat 15s linear infinite;
+}
+
+@keyframes particleFloat {
+    0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.3;
+    }
+
+    90% {
+        opacity: 0.3;
+    }
+
+    100% {
+        transform: translateY(-100vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+/* Variações de partículas */
+.particle:nth-child(1) {
+    left: 5%;
+    animation-delay: 0s;
+    animation-duration: 12s;
+}
+
+.particle:nth-child(2) {
+    left: 15%;
+    animation-delay: 2s;
+    animation-duration: 14s;
+}
+
+.particle:nth-child(3) {
+    left: 25%;
+    animation-delay: 4s;
+    animation-duration: 16s;
+}
+
+.particle:nth-child(4) {
+    left: 35%;
+    animation-delay: 1s;
+    animation-duration: 13s;
+}
+
+.particle:nth-child(5) {
+    left: 45%;
+    animation-delay: 3s;
+    animation-duration: 15s;
+}
+
+.particle:nth-child(6) {
+    left: 55%;
+    animation-delay: 5s;
+    animation-duration: 11s;
+}
+
+.particle:nth-child(7) {
+    left: 65%;
+    animation-delay: 2s;
+    animation-duration: 17s;
+}
+
+.particle:nth-child(8) {
+    left: 75%;
+    animation-delay: 4s;
+    animation-duration: 12s;
+}
+
+.particle:nth-child(9) {
+    left: 85%;
+    animation-delay: 1s;
+    animation-duration: 14s;
+}
+
+.particle:nth-child(10) {
+    left: 95%;
+    animation-delay: 3s;
+    animation-duration: 16s;
+}
+
+/* Tamanhos variados */
+.particle:nth-child(odd) {
+    width: 4px;
+    height: 4px;
+}
+
+.particle:nth-child(3n) {
+    width: 8px;
+    height: 8px;
+    opacity: 0.2;
+}
+
+/* ----------------------------------------------------------------------------
+   ANIMAÇÃO DE GRADIENTE
+   ---------------------------------------------------------------------------- */
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.animate-gradient {
+    background-size: 200% 200%;
+    animation: gradientShift 5s ease infinite;
+}
+
+/* ----------------------------------------------------------------------------
+   HOVER EFFECTS - EFEITOS DE INTERAÇÃO
+   ---------------------------------------------------------------------------- */
+
+/* Lift (elevar) no hover */
+.hover-lift {
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.hover-lift:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Glow no hover */
+.hover-glow {
+    transition: box-shadow var(--transition-fast);
+}
+
+.hover-glow:hover {
+    box-shadow: var(--shadow-glow);
+}
+
+/* Scale no hover */
+.hover-scale {
+    transition: transform var(--transition-fast);
+}
+
+.hover-scale:hover {
+    transform: scale(1.05);
+}
+
+/* Rotate no hover */
+.hover-rotate {
+    transition: transform var(--transition-fast);
+}
+
+.hover-rotate:hover {
+    transform: rotate(5deg);
+}
+
+/* Tilt effect (3D) */
+.hover-tilt {
+    transform-style: preserve-3d;
+    transition: transform var(--transition-fast);
+}
+
+/* ----------------------------------------------------------------------------
+   SCROLL REVEAL - ELEMENTOS QUE APARECEM AO SCROLL
+   ---------------------------------------------------------------------------- */
+
+/* Estado inicial (escondido) */
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+/* Estado revelado */
+.reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Variações de direção */
+.reveal-left {
+    transform: translateX(-50px);
+}
+
+.reveal-left.revealed {
+    transform: translateX(0);
+}
+
+.reveal-right {
+    transform: translateX(50px);
+}
+
+.reveal-right.revealed {
+    transform: translateX(0);
+}
+
+.reveal-scale {
+    transform: scale(0.8);
+}
+
+.reveal-scale.revealed {
+    transform: scale(1);
+}
+
+/* ----------------------------------------------------------------------------
+   LOADING / SPINNER
+   ---------------------------------------------------------------------------- */
+
+/* Spinner circular */
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid var(--black-500);
+    border-top-color: var(--orange-500);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+/* Loading dots */
+@keyframes loadingDots {
+
+    0%,
+    20% {
+        opacity: 0.2;
+        transform: scale(0.8);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    80%,
+    100% {
+        opacity: 0.2;
+        transform: scale(0.8);
+    }
+}
+
+.loading-dots {
+    display: flex;
+    gap: var(--space-xs);
+}
+
+.loading-dots span {
+    width: 10px;
+    height: 10px;
+    background: var(--orange-500);
+    border-radius: 50%;
+    animation: loadingDots 1.4s ease-in-out infinite;
+}
+
+.loading-dots span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.loading-dots span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+/* ----------------------------------------------------------------------------
+   PROGRESS BAR DE LEITURA
+   ---------------------------------------------------------------------------- */
+
+/* Barra de progresso */
+.reading-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: var(--gradient-primary);
+    box-shadow: 0 0 10px var(--orange-glow-medium);
+    z-index: calc(var(--z-header) + 1);
+    transition: width 0.1s linear;
+}
+
+/* ----------------------------------------------------------------------------
+   CURSOR PERSONALIZADO
+   ---------------------------------------------------------------------------- */
+
+/* Cursor customizado (elemento) */
+.custom-cursor {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--orange-500);
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition:
+        transform 0.1s ease,
+        width 0.2s ease,
+        height 0.2s ease,
+        background-color 0.2s ease;
+    z-index: var(--z-cursor);
+    mix-blend-mode: difference;
+}
+
+/* Cursor expandido ao hover em links/botões */
+.custom-cursor.expanded {
+    width: 40px;
+    height: 40px;
+    background: var(--orange-glow-medium);
+}
+
+/* Ponto central do cursor */
+.custom-cursor-dot {
+    position: fixed;
+    width: 6px;
+    height: 6px;
+    background: var(--orange-500);
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: var(--z-cursor);
+}
+
+/* Esconde cursor padrão quando custom cursor está ativo */
+.cursor-custom-active {
+    cursor: none;
+}
+
+.cursor-custom-active * {
+    cursor: none;
+}
+
+/* ----------------------------------------------------------------------------
+   EFEITOS DE SHIMMER / SKELETON
+   ---------------------------------------------------------------------------- */
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+.skeleton {
+    background: linear-gradient(90deg,
+            var(--black-600) 25%,
+            var(--black-500) 50%,
+            var(--black-600) 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    border-radius: var(--radius-md);
+}

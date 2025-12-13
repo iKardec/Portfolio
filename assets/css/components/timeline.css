@@ -1,0 +1,148 @@
+/* ============================================================================
+   TIMELINE.CSS - Linha do Tempo
+   ============================================================================
+   Componente de timeline para experiências e formação:
+   - .timeline (container principal)
+   - .timeline-item (item individual)
+   - Marcadores e linhas conectoras
+   ============================================================================ */
+
+/* ----------------------------------------------------------------------------
+   CONTAINER DA TIMELINE
+   Estrutura principal com linha vertical
+   ---------------------------------------------------------------------------- */
+.timeline {
+    position: relative;
+    padding-left: var(--space-2xl);
+}
+
+/* Linha vertical de conexão */
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(
+        to bottom,
+        var(--orange-500),
+        var(--orange-glow-soft)
+    );
+    border-radius: var(--radius-full);
+}
+
+/* ----------------------------------------------------------------------------
+   ITEM DA TIMELINE
+   Entrada individual com marcador circular
+   ---------------------------------------------------------------------------- */
+.timeline-item {
+    position: relative;
+    padding-bottom: var(--space-xl);
+    padding-left: var(--space-lg);
+}
+
+/* Marcador circular (dot) */
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: calc(-1 * var(--space-2xl) - 6px);
+    top: 0;
+    width: 14px;
+    height: 14px;
+    background: var(--orange-500);
+    border: 3px solid var(--black-800);
+    border-radius: 50%;
+    box-shadow: 0 0 15px var(--orange-glow-medium);
+    transition: transform var(--transition-fast);
+}
+
+.timeline-item:hover::before {
+    transform: scale(1.3);
+}
+
+/* ----------------------------------------------------------------------------
+   PERÍODO / ANO
+   Indicador de data/período
+   ---------------------------------------------------------------------------- */
+.timeline-year {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    font-family: var(--font-accent);
+    font-size: var(--text-sm);
+    font-weight: var(--font-bold);
+    color: var(--orange-500);
+    margin-bottom: var(--space-sm);
+}
+
+.timeline-year i {
+    font-size: var(--text-base);
+}
+
+/* ----------------------------------------------------------------------------
+   CONTEÚDO DO ITEM
+   Card com informações do item
+   ---------------------------------------------------------------------------- */
+.timeline-content {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-lg);
+    transition:
+        border-color var(--transition-fast),
+        box-shadow var(--transition-fast);
+}
+
+.timeline-item:hover .timeline-content {
+    border-color: var(--orange-500);
+    box-shadow: 0 0 20px var(--orange-glow-soft);
+}
+
+/* Título da empresa/instituição */
+.timeline-title {
+    font-family: var(--font-heading);
+    font-size: var(--text-lg);
+    font-weight: var(--font-semibold);
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-xs);
+}
+
+/* Cargo/curso */
+.timeline-subtitle {
+    font-size: var(--text-base);
+    font-weight: var(--font-medium);
+    color: var(--orange-400);
+    margin-bottom: var(--space-sm);
+}
+
+/* Descrição */
+.timeline-description {
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+}
+
+/* ----------------------------------------------------------------------------
+   RESPONSIVO
+   Ajustes para dispositivos menores
+   ---------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+    .timeline {
+        padding-left: var(--space-xl);
+    }
+
+    .timeline-item {
+        padding-left: var(--space-md);
+    }
+
+    .timeline-item::before {
+        left: calc(-1 * var(--space-xl) - 5px);
+        width: 12px;
+        height: 12px;
+    }
+
+    .timeline-content {
+        padding: var(--space-md);
+    }
+}

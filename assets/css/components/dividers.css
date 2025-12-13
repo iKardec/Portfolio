@@ -1,0 +1,37 @@
+/* ============================================================================
+   DIVIDERS.CSS - Divisores e Separadores
+   ============================================================================
+   Elementos visuais para separação de conteúdo:
+   - .divider (linha simples)
+   - .divider-wide (linha larga)
+   - .divider-glow (com efeito de brilho)
+   ============================================================================ */
+
+/* ----------------------------------------------------------------------------
+   DIVISOR BASE
+   Linha horizontal decorativa
+   ---------------------------------------------------------------------------- */
+.divider {
+    width: 60px;
+    height: 3px;
+    background: var(--gradient-primary);
+    border-radius: var(--radius-full);
+    margin: var(--space-md) auto;
+}
+
+/* ----------------------------------------------------------------------------
+   DIVISOR LARGO
+   Versão mais extensa do divisor
+   ---------------------------------------------------------------------------- */
+.divider-wide {
+    width: 100%;
+    max-width: 200px;
+}
+
+/* ----------------------------------------------------------------------------
+   DIVISOR COM GLOW
+   Divisor com efeito de brilho laranja
+   ---------------------------------------------------------------------------- */
+.divider-glow {
+    box-shadow: 0 0 15px var(--orange-glow-medium);
+}

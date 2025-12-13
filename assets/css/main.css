@@ -1,0 +1,52 @@
+/* ============================================================================
+   MAIN.CSS - Arquivo Principal de Estilos
+   ============================================================================
+   Ponto de entrada para todos os estilos do projeto.
+   Importa módulos na ordem correta para cascata de estilos.
+   
+   ORDEM DE IMPORTAÇÃO:
+   1. Base - Reset, variáveis, tipografia (fundação)
+   2. Layout - Estrutura de página (header, footer, containers)
+   3. Components - Elementos reutilizáveis (botões, cards, badges)
+   4. Sections - Estilos específicos de cada seção
+   5. Animations - Keyframes e efeitos visuais
+   6. Responsive - Media queries (sempre por último)
+   ============================================================================ */
+
+/* ============================================================================
+   1. FUNDAÇÃO
+   Reset CSS, variáveis de design e tipografia base
+   ============================================================================ */
+@import url('base.css');
+
+/* ============================================================================
+   2. ESTRUTURA
+   Header, footer, containers e grid system
+   ============================================================================ */
+@import url('layout.css');
+
+/* ============================================================================
+   3. COMPONENTES MODULARES
+   Botões, cards, badges, timeline, skills
+   Importa o índice que carrega todos os componentes
+   ============================================================================ */
+@import url('components/index.css');
+
+/* ============================================================================
+   4. SEÇÕES ESPECÍFICAS
+   Estilos específicos: hero, welcome, engenharia, etc
+   ============================================================================ */
+@import url('sections/index.css');
+@import url('sections.css');
+
+/* ============================================================================
+   5. ANIMAÇÕES
+   Keyframes, transições, efeitos visuais
+   ============================================================================ */
+@import url('animations.css');
+
+/* ============================================================================
+   6. RESPONSIVIDADE
+   Media queries para todos os breakpoints - sempre por último
+   ============================================================================ */
+@import url('responsive.css');

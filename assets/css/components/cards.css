@@ -1,0 +1,343 @@
+/* ============================================================================
+   CARDS.CSS - Componentes de Cards
+   ============================================================================
+   Variantes de cards para exibição de conteúdo:
+   - .card (glassmorphism base)
+   - .card-solid (fundo sólido)
+   - .card-highlight (destaque lateral)
+   - .compact-card (versão compacta)
+   - .tech-card (tecnologias)
+   - .programming-tech-card (cards de programação)
+   ============================================================================ */
+
+/* ----------------------------------------------------------------------------
+   CARD BASE - GLASSMORPHISM
+   Efeito de vidro com blur de fundo
+   ---------------------------------------------------------------------------- */
+.card {
+    background: var(--gradient-glass);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    position: relative;
+    overflow: hidden;
+    transition:
+        transform var(--transition-base),
+        box-shadow var(--transition-base),
+        border-color var(--transition-base);
+}
+
+/* Brilho sutil no topo do card */
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.1),
+        transparent
+    );
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 152, 0, 0.3);
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.4),
+        0 0 30px var(--orange-glow-soft);
+}
+
+/* Título do card */
+.card-title {
+    font-family: var(--font-heading);
+    font-size: var(--text-xl);
+    font-weight: var(--font-bold);
+    color: var(--color-primary);
+    margin-bottom: var(--space-md);
+}
+
+/* Descrição do card */
+.card-description {
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+}
+
+/* ----------------------------------------------------------------------------
+   CARD SÓLIDO
+   Alternativa sem blur para melhor performance
+   ---------------------------------------------------------------------------- */
+.card-solid {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    transition:
+        transform var(--transition-base),
+        box-shadow var(--transition-base),
+        border-color var(--transition-base);
+}
+
+.card-solid:hover {
+    transform: translateY(-5px);
+    border-color: var(--orange-500);
+    box-shadow: var(--shadow-lg), var(--shadow-glow);
+}
+
+/* ----------------------------------------------------------------------------
+   CARD COM DESTAQUE LATERAL
+   Borda esquerda colorida
+   ---------------------------------------------------------------------------- */
+.card-highlight {
+    background: var(--color-surface-dark);
+    border-left: 4px solid var(--orange-500);
+    border-radius: var(--radius-md);
+    padding: var(--space-lg);
+    transition:
+        transform var(--transition-fast),
+        box-shadow var(--transition-fast);
+}
+
+.card-highlight:hover {
+    transform: translateX(8px);
+    box-shadow: var(--shadow-md);
+}
+
+/* ----------------------------------------------------------------------------
+   CARD COMPACTO
+   Versão menor para listas e grids
+   ---------------------------------------------------------------------------- */
+.compact-card {
+    background: var(--gradient-glass);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+    transition: all var(--transition-base);
+}
+
+.compact-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--orange-500);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), var(--shadow-glow);
+}
+
+/* Header do card compacto */
+.compact-card-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    margin-bottom: var(--space-md);
+}
+
+/* Ícone do card compacto */
+.compact-card-icon {
+    width: 45px;
+    height: 45px;
+    min-width: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--orange-glow-soft);
+    border-radius: var(--radius-md);
+    color: var(--orange-500);
+    font-size: var(--text-xl);
+}
+
+/* Título do card compacto */
+.compact-card-title {
+    font-family: var(--font-heading);
+    font-size: var(--text-lg);
+    font-weight: 600;
+    color: var(--color-text-primary);
+}
+
+/* Subtítulo do card compacto */
+.compact-card-subtitle {
+    font-size: var(--text-sm);
+    color: var(--orange-400);
+}
+
+/* Corpo do card compacto */
+.compact-card-body {
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+}
+
+/* ----------------------------------------------------------------------------
+   CARD DE TECNOLOGIA
+   Para exibição de skills técnicas
+   ---------------------------------------------------------------------------- */
+.tech-card {
+    background: var(--gradient-glass);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    text-align: center;
+    transition:
+        transform var(--transition-base),
+        border-color var(--transition-base),
+        box-shadow var(--transition-base);
+    position: relative;
+    overflow: hidden;
+}
+
+.tech-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        circle at center,
+        var(--orange-glow-soft) 0%,
+        transparent 70%
+    );
+    opacity: 0;
+    transition: opacity var(--transition-base);
+}
+
+.tech-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    border-color: var(--orange-500);
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.4),
+        var(--shadow-glow);
+}
+
+.tech-card:hover::after {
+    opacity: 1;
+}
+
+/* Ícone da tecnologia */
+.tech-icon {
+    font-size: var(--text-4xl);
+    color: var(--orange-500);
+    margin-bottom: var(--space-md);
+    position: relative;
+    z-index: 1;
+}
+
+/* Nome da tecnologia */
+.tech-name {
+    font-family: var(--font-heading);
+    font-size: var(--text-lg);
+    font-weight: var(--font-bold);
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-sm);
+    position: relative;
+    z-index: 1;
+}
+
+/* Descrição da tecnologia */
+.tech-description {
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    position: relative;
+    z-index: 1;
+}
+
+/* ----------------------------------------------------------------------------
+   CARD DE TECNOLOGIA - PROGRAMAÇÃO
+   Variante específica para seção de programação
+   ---------------------------------------------------------------------------- */
+.programming-tech-card {
+    background: var(--gradient-glass);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition:
+        transform var(--transition-base),
+        border-color var(--transition-base),
+        box-shadow var(--transition-base);
+}
+
+.programming-tech-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        circle at center bottom,
+        var(--orange-glow-soft) 0%,
+        transparent 60%
+    );
+    opacity: 0;
+    transition: opacity var(--transition-base);
+}
+
+.programming-tech-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    border-color: var(--orange-500);
+    box-shadow:
+        0 25px 50px rgba(0, 0, 0, 0.5),
+        var(--shadow-glow-strong);
+}
+
+.programming-tech-card:hover::before {
+    opacity: 1;
+}
+
+/* Ícone da tecnologia */
+.programming-tech-card i {
+    font-size: var(--text-5xl);
+    color: var(--orange-500);
+    margin-bottom: var(--space-md);
+    position: relative;
+    z-index: 1;
+    transition: transform var(--transition-base);
+}
+
+.programming-tech-card:hover i {
+    transform: scale(1.2);
+}
+
+/* Nome da tecnologia */
+.programming-tech-card h4 {
+    font-family: var(--font-heading);
+    font-size: var(--text-lg);
+    font-weight: var(--font-bold);
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-sm);
+    position: relative;
+    z-index: 1;
+}
+
+/* Descrição da tecnologia */
+.programming-tech-card p {
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    position: relative;
+    z-index: 1;
+}
+
+/* Grid de tecnologias de programação */
+.programming-tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: var(--space-lg);
+    margin-top: var(--space-xl);
+}
+
+/* ----------------------------------------------------------------------------
+   CONTENT BOX
+   Container genérico para conteúdo
+   ---------------------------------------------------------------------------- */
+.content-box {
+    background: var(--gradient-glass);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-xl);
+    padding: var(--space-2xl);
+    box-shadow: var(--shadow-lg);
+}

@@ -1,0 +1,996 @@
+/* ============================================================================
+   RESPONSIVE.CSS - Media Queries e Responsividade
+   ============================================================================
+   Este arquivo contém:
+   - Breakpoints organizados (mobile-first)
+   - Adaptações de navegação
+   - Ajustes de tipografia
+   - Grid responsivo
+   - Mobile optimizations
+   ============================================================================ */
+
+/* ----------------------------------------------------------------------------
+   BREAKPOINTS REFERENCE
+   - Mobile pequeno: < 480px
+   - Mobile: 480px - 768px  
+   - Tablet: 768px - 1024px
+   - Desktop: 1024px - 1280px
+   - Large Desktop: > 1280px
+   ---------------------------------------------------------------------------- */
+
+/* ============================================================================
+   TABLET (max-width: 1024px)
+   ============================================================================ */
+@media (max-width: 1024px) {
+
+    /* Container ajustado */
+    .container {
+        padding: 0 var(--space-md);
+    }
+
+    /* Header */
+    .name-primary {
+        font-size: var(--text-4xl);
+    }
+
+    .name-secondary {
+        font-size: var(--text-lg);
+    }
+
+    /* Seções */
+    .section-title {
+        font-size: var(--text-3xl);
+    }
+
+    /* Grids */
+    .grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Tech grid - 3 colunas em tablet */
+    .programming-tech-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--space-md);
+    }
+    
+    /* Section icon header */
+    .section-icon-circle {
+        width: 70px;
+        height: 70px;
+        min-width: 70px;
+        font-size: var(--text-2xl);
+    }
+    
+    .section-icon-header h2 {
+        font-size: var(--text-3xl);
+    }
+}
+
+/* ============================================================================
+   TABLET PEQUENO (max-width: 768px)
+   ============================================================================ */
+@media (max-width: 768px) {
+
+    /* Variáveis ajustadas para mobile */
+    :root {
+        --header-height: 220px;
+        --header-height-minimized: 120px;
+    }
+
+    /* ----------------------------------------------------------------------------
+       HERO MOBILE
+       ---------------------------------------------------------------------------- */
+    .hero {
+        padding: var(--space-xl) var(--space-md);
+        min-height: 100vh;
+    }
+    
+    .hero-avatar {
+        width: 140px;
+        height: 140px;
+        border-width: 3px;
+        margin-bottom: var(--space-lg);
+    }
+    
+    .hero-title {
+        font-size: clamp(2rem, 10vw, 3rem);
+        margin-bottom: var(--space-xs);
+    }
+    
+    .hero-subtitle {
+        font-size: var(--text-lg);
+        margin-bottom: var(--space-sm);
+    }
+    
+    /* Hero badges - 2 por linha */
+    .hero-badges {
+        gap: var(--space-xs);
+        margin-bottom: var(--space-xl);
+    }
+    
+    .hero-badge {
+        padding: var(--space-xs) var(--space-sm);
+        font-size: var(--text-xs);
+    }
+    
+    .hero-badge i {
+        font-size: var(--text-sm);
+    }
+    
+    /* Hero CTAs empilhados */
+    .hero-cta {
+        flex-direction: column;
+        gap: var(--space-sm);
+        width: 100%;
+        max-width: 280px;
+        margin: 0 auto var(--space-2xl);
+    }
+    
+    .hero-cta .btn {
+        width: 100%;
+        justify-content: center;
+        padding: var(--space-sm) var(--space-lg);
+    }
+    
+    /* Scroll indicator menor */
+    .scroll-indicator {
+        bottom: var(--space-lg);
+        font-size: var(--text-xs);
+    }
+    
+    .scroll-indicator i {
+        font-size: var(--text-lg);
+    }
+
+    /* ----------------------------------------------------------------------------
+       SEÇÕES PORTFOLIO MOBILE
+       ---------------------------------------------------------------------------- */
+    .portfolio-section {
+        min-height: auto;
+        padding: var(--space-2xl) 0;
+    }
+    
+    /* Section icon header - empilhado verticalmente */
+    .section-icon-header {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--space-md);
+        margin-bottom: var(--space-xl);
+    }
+    
+    .section-icon-circle {
+        width: 60px;
+        height: 60px;
+        min-width: 60px;
+        font-size: var(--text-xl);
+    }
+    
+    .section-icon-header h2 {
+        font-size: var(--text-2xl);
+    }
+    
+    .section-icon-header p {
+        font-size: var(--text-sm);
+    }
+    
+    /* Two column grid para 1 coluna */
+    .two-column-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+    }
+
+    /* ----------------------------------------------------------------------------
+       HEADER MOBILE
+       ---------------------------------------------------------------------------- */
+    .header {
+        padding: var(--space-lg) 0 var(--space-md);
+    }
+
+    .header-container {
+        gap: var(--space-md);
+    }
+
+    /* Título */
+    .name-primary {
+        font-size: var(--text-3xl);
+        letter-spacing: 0.02em;
+    }
+
+    .name-secondary {
+        font-size: var(--text-base);
+    }
+
+    .header-subtitle {
+        font-size: var(--text-base);
+    }
+
+    /* Desabilita alguns comportamentos de minimização no mobile */
+    .header.minimized {
+        padding: var(--space-md) 0;
+    }
+
+    .header.minimized .name-primary {
+        font-size: var(--text-xl);
+    }
+
+    .header.minimized .name-secondary {
+        display: inline-block;
+        font-size: var(--text-sm);
+    }
+
+    .header.minimized .header-subtitle {
+        display: block;
+        font-size: var(--text-sm);
+    }
+
+    .header.minimized .header-container {
+        flex-direction: column;
+    }
+
+    /* ----------------------------------------------------------------------------
+       NAVEGAÇÃO MOBILE - SCROLL HORIZONTAL
+       ---------------------------------------------------------------------------- */
+    .nav-tabs {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        overflow-y: hidden;
+        gap: var(--space-sm);
+        padding: 0 0 var(--space-sm) 0;
+        margin: 0;
+        max-width: 100%;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: thin;
+        scrollbar-color: var(--orange-500) var(--black-800);
+        justify-content: flex-start;
+    }
+
+    /* Espaçamento antes do primeiro botão */
+    .nav-tabs::before {
+        content: '';
+        display: block;
+        flex-shrink: 0;
+        width: var(--space-md);
+        height: 1px;
+    }
+
+    /* Espaçamento depois do último botão */
+    .nav-tabs::after {
+        content: '';
+        display: block;
+        flex-shrink: 0;
+        width: var(--space-md);
+        height: 1px;
+    }
+
+    /* Scrollbar estilizada */
+    .nav-tabs::-webkit-scrollbar {
+        height: 6px;
+    }
+
+    .nav-tabs::-webkit-scrollbar-track {
+        background: var(--black-800);
+        border-radius: var(--radius-full);
+    }
+
+    .nav-tabs::-webkit-scrollbar-thumb {
+        background: var(--orange-500);
+        border-radius: var(--radius-full);
+    }
+
+    /* Botões de tab mobile */
+    .tab-btn {
+        flex: 0 0 auto;
+        min-width: 150px;
+        width: auto;
+        padding: var(--space-sm) var(--space-md);
+        font-size: var(--text-xs);
+        white-space: nowrap;
+    }
+
+    .tab-icon {
+        font-size: var(--text-base);
+    }
+
+    /* Remove minimização extrema dos botões no mobile */
+    .header.minimized .tab-btn {
+        min-width: 140px;
+        padding: var(--space-sm) var(--space-md);
+        justify-content: flex-start;
+    }
+
+    .header.minimized .tab-label {
+        display: inline-block;
+    }
+
+    .header.minimized .tab-icon {
+        font-size: var(--text-base);
+        margin-right: var(--space-xs);
+    }
+
+    /* ----------------------------------------------------------------------------
+       CONTENT MOBILE
+       ---------------------------------------------------------------------------- */
+    .main-content {
+        padding: var(--space-lg) 0;
+    }
+
+    body.header-fixed .main-content {
+        margin-top: 240px;
+        transition: margin-top var(--transition-smooth);
+    }
+
+    body.header-fixed.header-minimized .main-content {
+        margin-top: 180px;
+        transition: margin-top var(--transition-smooth);
+    }
+
+    /* Seções */
+    .section-title {
+        font-size: var(--text-2xl);
+    }
+
+    .info-block-title {
+        font-size: var(--text-xl);
+    }
+
+    /* Grids para coluna única */
+    .grid-2,
+    .grid-3,
+    .grid-4,
+    .grid-auto {
+        grid-template-columns: 1fr;
+    }
+
+    .experience-grid,
+    .tech-grid,
+    .skills-grid,
+    .interests-grid,
+    .admin-skills-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Programming tech grid - 2 colunas no mobile */
+    .programming-tech-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-sm);
+    }
+    
+    .programming-tech-card {
+        padding: var(--space-md);
+    }
+    
+    .programming-tech-card i {
+        font-size: var(--text-3xl);
+        margin-bottom: var(--space-sm);
+    }
+    
+    .programming-tech-card h4 {
+        font-size: var(--text-sm);
+        margin-bottom: var(--space-xs);
+    }
+    
+    .programming-tech-card p {
+        font-size: var(--text-xs);
+        line-height: 1.4;
+    }
+
+    /* ----------------------------------------------------------------------------
+       COMPACT CARDS MOBILE
+       ---------------------------------------------------------------------------- */
+    .compact-card {
+        padding: var(--space-md);
+    }
+    
+    .compact-card-header {
+        gap: var(--space-sm);
+        margin-bottom: var(--space-sm);
+    }
+    
+    .compact-card-icon {
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+        font-size: var(--text-lg);
+    }
+    
+    .compact-card-title {
+        font-size: var(--text-base);
+    }
+    
+    .compact-card-subtitle {
+        font-size: var(--text-xs);
+    }
+    
+    .compact-card-body {
+        font-size: var(--text-xs);
+        line-height: 1.6;
+    }
+    
+    /* Skill tags mobile */
+    .skill-tags {
+        gap: 6px;
+    }
+    
+    .skill-tag {
+        padding: 4px 8px;
+        font-size: 10px;
+    }
+
+    /* ----------------------------------------------------------------------------
+       WELCOME CARD MOBILE
+       ---------------------------------------------------------------------------- */
+    .welcome-card {
+        padding: var(--space-xl) var(--space-lg);
+    }
+
+    .welcome-icon {
+        font-size: var(--text-5xl);
+    }
+
+    .welcome-title {
+        font-size: var(--text-3xl);
+    }
+
+    .welcome-intro-box {
+        padding: var(--space-md);
+    }
+
+    .welcome-intro-box p {
+        font-size: var(--text-sm);
+    }
+
+    .welcome-image-container {
+        width: 80%;
+        max-width: 300px;
+    }
+
+    .custom-text-box {
+        padding: var(--space-md);
+    }
+
+    .custom-text-box p {
+        font-size: var(--text-sm);
+    }
+
+    /* ----------------------------------------------------------------------------
+       TIMELINE MOBILE
+       ---------------------------------------------------------------------------- */
+    .timeline {
+        padding-left: var(--space-xl);
+    }
+
+    .timeline-item {
+        padding-left: var(--space-md);
+    }
+
+    .timeline-item::before {
+        left: calc(-1 * var(--space-xl) - 5px);
+        width: 12px;
+        height: 12px;
+    }
+
+    .timeline-content {
+        padding: var(--space-md);
+    }
+
+    .timeline-title {
+        font-size: var(--text-base);
+    }
+
+    .timeline-subtitle {
+        font-size: var(--text-sm);
+    }
+
+    .timeline-description {
+        font-size: var(--text-xs);
+    }
+
+    /* ----------------------------------------------------------------------------
+       BOTÕES MOBILE
+       ---------------------------------------------------------------------------- */
+    .download-btn,
+    .external-link {
+        padding: var(--space-sm) var(--space-lg);
+        font-size: var(--text-xs);
+        width: 100%;
+        justify-content: center;
+    }
+
+    .section-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    /* Cards */
+    .content-box {
+        padding: var(--space-lg);
+    }
+
+    .experience-feature-card {
+        padding: var(--space-lg);
+    }
+
+    /* Intro text */
+    .intro-text {
+        padding: var(--space-md);
+        font-size: var(--text-sm);
+    }
+    
+    /* ----------------------------------------------------------------------------
+       CONTACT SECTION MOBILE
+       ---------------------------------------------------------------------------- */
+    .contact-section {
+        padding: var(--space-xl) 0;
+    }
+    
+    .contact-links {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--space-md);
+        margin-top: var(--space-lg);
+    }
+    
+    .contact-link {
+        width: 100%;
+        max-width: 280px;
+        padding: var(--space-lg);
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: var(--space-md);
+    }
+    
+    .contact-link i {
+        font-size: var(--text-2xl);
+    }
+    
+    .contact-link span {
+        font-size: var(--text-base);
+    }
+    
+    /* Skills grid mobile */
+    .skills-grid {
+        gap: var(--space-sm);
+    }
+    
+    .skill-item {
+        padding: var(--space-sm) var(--space-md);
+    }
+    
+    .skill-icon {
+        width: 36px;
+        height: 36px;
+        font-size: var(--text-base);
+    }
+    
+    .skill-name {
+        font-size: var(--text-sm);
+    }
+}
+
+/* ============================================================================
+   MOBILE PEQUENO (max-width: 480px)
+   ============================================================================ */
+@media (max-width: 480px) {
+
+    /* Variáveis ainda mais ajustadas */
+    :root {
+        --space-lg: 1rem;
+        --space-xl: 1.5rem;
+        --space-2xl: 2rem;
+    }
+
+    /* ----------------------------------------------------------------------------
+       HERO MOBILE PEQUENO
+       ---------------------------------------------------------------------------- */
+    .hero {
+        padding: var(--space-lg) var(--space-sm);
+    }
+    
+    .hero-avatar {
+        width: 120px;
+        height: 120px;
+        border-width: 3px;
+        margin-bottom: var(--space-md);
+    }
+    
+    .hero-title {
+        font-size: clamp(1.75rem, 12vw, 2.5rem);
+    }
+    
+    .hero-subtitle {
+        font-size: var(--text-base);
+    }
+    
+    /* Hero badges - estilo mais compacto */
+    .hero-badges {
+        gap: 6px;
+        margin-bottom: var(--space-lg);
+    }
+    
+    .hero-badge {
+        padding: 6px 10px;
+        font-size: 11px;
+    }
+    
+    .hero-badge i {
+        font-size: 12px;
+    }
+    
+    /* CTAs hero */
+    .hero-cta {
+        max-width: 100%;
+        padding: 0 var(--space-sm);
+    }
+    
+    .hero-cta .btn {
+        font-size: var(--text-xs);
+        padding: var(--space-sm) var(--space-md);
+    }
+
+    /* Header extra compacto */
+    .header {
+        padding: var(--space-md) 0;
+    }
+
+    .name-primary {
+        font-size: var(--text-2xl);
+        letter-spacing: 0.01em;
+    }
+
+    .name-secondary {
+        font-size: var(--text-sm);
+    }
+
+    .header-subtitle {
+        font-size: var(--text-sm);
+    }
+
+    /* Header minimizado */
+    .header.minimized .name-primary {
+        font-size: var(--text-lg);
+    }
+
+    .header.minimized .name-secondary {
+        font-size: var(--text-xs);
+    }
+
+    .header.minimized .header-subtitle {
+        font-size: var(--text-xs);
+    }
+
+    /* Navegação */
+    .nav-tabs {
+        gap: var(--space-xs);
+    }
+
+    .tab-btn {
+        min-width: 130px;
+        padding: var(--space-xs) var(--space-sm);
+        font-size: 0.7rem;
+    }
+
+    .tab-icon {
+        font-size: var(--text-sm);
+    }
+
+    /* Container ajustado */
+    body.header-fixed .main-content {
+        margin-top: 200px;
+        transition: margin-top var(--transition-smooth);
+    }
+
+    body.header-fixed.header-minimized .main-content {
+        margin-top: 160px;
+        transition: margin-top var(--transition-smooth);
+    }
+
+    /* ----------------------------------------------------------------------------
+       SEÇÕES MOBILE PEQUENO
+       ---------------------------------------------------------------------------- */
+    .portfolio-section {
+        padding: var(--space-xl) 0;
+    }
+    
+    .section-icon-circle {
+        width: 50px;
+        height: 50px;
+        min-width: 50px;
+        font-size: var(--text-lg);
+    }
+    
+    .section-icon-header h2 {
+        font-size: var(--text-xl);
+    }
+    
+    .section-icon-header p {
+        font-size: var(--text-xs);
+    }
+    
+    /* Programming tech grid - ainda 2 colunas mas menores */
+    .programming-tech-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+    
+    .programming-tech-card {
+        padding: var(--space-sm);
+    }
+    
+    .programming-tech-card i {
+        font-size: var(--text-2xl);
+        margin-bottom: 6px;
+    }
+    
+    .programming-tech-card h4 {
+        font-size: 12px;
+    }
+    
+    .programming-tech-card p {
+        font-size: 10px;
+        display: none; /* Esconde descrição em telas muito pequenas */
+    }
+
+    /* Welcome */
+    .welcome-icon {
+        font-size: var(--text-4xl);
+    }
+
+    .welcome-card {
+        padding: var(--space-lg) var(--space-md);
+        gap: var(--space-lg);
+    }
+
+    .welcome-title {
+        font-size: var(--text-2xl);
+    }
+
+    .welcome-image-container {
+        width: 90%;
+        max-width: 250px;
+    }
+
+    /* Seções */
+    .section-title {
+        font-size: var(--text-xl);
+    }
+
+    .section-header::after {
+        width: 100px;
+    }
+
+    .info-block-title {
+        font-size: var(--text-lg);
+    }
+
+    /* Cards */
+    .content-box {
+        padding: var(--space-md);
+        border-radius: var(--radius-md);
+    }
+
+    .card,
+    .card-solid {
+        padding: var(--space-md);
+    }
+    
+    /* Compact cards */
+    .compact-card {
+        padding: var(--space-sm);
+    }
+    
+    .compact-card-icon {
+        width: 36px;
+        height: 36px;
+        min-width: 36px;
+        font-size: var(--text-base);
+    }
+    
+    .compact-card-title {
+        font-size: var(--text-sm);
+    }
+    
+    .compact-card-body {
+        font-size: 11px;
+    }
+    
+    /* Skill tags ainda mais compactas */
+    .skill-tags {
+        gap: 4px;
+    }
+    
+    .skill-tag {
+        padding: 3px 6px;
+        font-size: 9px;
+    }
+
+    /* Timeline ainda mais compacta */
+    .timeline {
+        padding-left: var(--space-lg);
+    }
+
+    .timeline-item::before {
+        left: calc(-1 * var(--space-lg) - 4px);
+        width: 10px;
+        height: 10px;
+    }
+
+    /* Footer */
+    .footer {
+        padding: var(--space-xl) var(--space-md);
+    }
+
+    .footer-links {
+        gap: var(--space-md);
+    }
+
+    .footer-link {
+        width: 40px;
+        height: 40px;
+    }
+
+    /* Skills */
+    .skill-item {
+        padding: var(--space-xs) var(--space-sm);
+    }
+
+    .skill-icon {
+        width: 32px;
+        height: 32px;
+        font-size: var(--text-sm);
+    }
+    
+    .skill-name {
+        font-size: var(--text-xs);
+    }
+
+    /* Download button */
+    .download-btn i,
+    .external-link i {
+        font-size: var(--text-base);
+    }
+    
+    /* Contact links mais compactos */
+    .contact-link {
+        padding: var(--space-md);
+    }
+    
+    .contact-link i {
+        font-size: var(--text-xl);
+    }
+    
+    .contact-link span {
+        font-size: var(--text-sm);
+    }
+}
+
+/* ============================================================================
+   DESKTOP GRANDE (min-width: 1280px)
+   ============================================================================ */
+@media (min-width: 1280px) {
+
+    /* Container maior */
+    .container {
+        max-width: 1400px;
+    }
+
+    /* Tipografia aumentada */
+    .name-primary {
+        font-size: var(--text-6xl);
+    }
+
+    .name-secondary {
+        font-size: var(--text-2xl);
+    }
+
+    .section-title {
+        font-size: var(--text-5xl);
+    }
+
+    /* Welcome maior */
+    .welcome-card {
+        padding: var(--space-3xl);
+        max-width: 1000px;
+    }
+
+    .welcome-image-container {
+        max-width: 400px;
+    }
+
+    /* Grids com mais colunas */
+    .programming-tech-grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+/* ============================================================================
+   PRINT STYLES
+   ============================================================================ */
+@media print {
+
+    /* Esconde elementos interativos */
+    .header,
+    .nav-tabs,
+    .particles-container,
+    .custom-cursor,
+    .custom-cursor-dot,
+    .reading-progress {
+        display: none !important;
+    }
+
+    /* Remove backgrounds escuros */
+    body {
+        background: white;
+        color: black;
+    }
+
+    .content-section {
+        display: block !important;
+        opacity: 1 !important;
+    }
+
+    /* Remove sombras e efeitos */
+    * {
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    /* Links visíveis */
+    a[href]::after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+        color: #666;
+    }
+}
+
+/* ============================================================================
+   PREFERÊNCIAS DO USUÁRIO
+   ============================================================================ */
+
+/* Reduzir movimento para acessibilidade */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    .particles-container {
+        display: none;
+    }
+}
+
+/* Modo escuro forçado (já é escuro por padrão, mas garante) */
+@media (prefers-color-scheme: dark) {
+    :root {
+        color-scheme: dark;
+    }
+}
+
+/* Alto contraste */
+@media (prefers-contrast: high) {
+    :root {
+        --orange-500: #ff8800;
+        --color-text-primary: #ffffff;
+        --color-text-secondary: #dddddd;
+        --color-border: #666666;
+    }
+
+    .card,
+    .card-solid {
+        border-width: 2px;
+    }
+}
