@@ -56,12 +56,12 @@ function getHeaderHeight() {
 }
 
 /**
- * Debounce para otimizar eventos de scroll/resize
+ * Debounce local para otimizar eventos de scroll/resize
  * @param {Function} func - Função a ser executada
  * @param {number} wait - Tempo de espera em ms
  * @returns {Function} Função com debounce
  */
-function debounce(func, wait) {
+function _debounce(func, wait) {
   let timeout;
   return function executedFunction(...args) {
     const later = () => {
@@ -355,7 +355,7 @@ function setupScrollListener() {
  * Configura listener de resize
  */
 function setupResizeListener() {
-  const handleResize = debounce(() => {
+  const handleResize = _debounce(() => {
     if (NavigationState.isWelcomePage) {
       removeHeaderMinimization();
     }

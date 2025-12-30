@@ -6,3 +6,6 @@
 
 /* Hero section (tela inicial) */
 @import url('hero.css');
+
+/* Portfolio sections (sobre, engenharia, programação, experiência, contato) */
+@import url('portfolio.css');

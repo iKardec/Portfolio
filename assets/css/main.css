@@ -34,10 +34,9 @@
 
 /* ============================================================================
    4. SEÇÕES ESPECÍFICAS
-   Estilos específicos: hero, welcome, engenharia, etc
+   Estilos específicos: hero, portfolio sections
    ============================================================================ */
 @import url('sections/index.css');
-@import url('sections.css');
 
 /* ============================================================================
    5. ANIMAÇÕES
