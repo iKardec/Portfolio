@@ -1,55 +1,40 @@
-/**
- * ============================================================================
- * sections/Programacao.jsx - Seção Programação e T.I
- * ============================================================================
- * Apresenta o histórico em programação, grid de tecnologias dominadas
- * e link para o GitHub.
- * ============================================================================
- */
-
-import { SectionHeader } from '../components/ui/SectionHeader.jsx';
-import { TechCard } from '../components/ui/TechCard.jsx';
+import { SectionHeader } from '../components/SectionHeader.jsx';
+import { TechCard } from '../components/TechCard.jsx';
+import { ProjectCard } from '../components/ProjectCard.jsx';
 import { programacaoData } from '../data/portfolio.js';
 
-/** Seção Programação e T.I */
 export function Programacao() {
   return (
-    <section id="programacao" className="portfolio-section" aria-labelledby="programacao-title">
-      <div className="container">
+    <section id="programacao" className="portfolio-section">
+      <SectionHeader eyebrow="O que eu faço" title="Programação" />
 
-        <SectionHeader
-          icon="fas fa-code"
-          title="Programação e T.I"
-          subtitle="Desenvolvimento Front-End e automações"
-          titleId="programacao-title"
-        />
+      <p
+        className="section-intro reveal"
+        dangerouslySetInnerHTML={{ __html: programacaoData.intro }}
+      />
 
-        {/* Texto introdutório */}
-        <div
-          className="intro-text reveal"
-          dangerouslySetInnerHTML={{ __html: programacaoData.intro }}
-        />
-
-        {/* Grid de tecnologias */}
-        <div className="programming-tech-grid">
-          {programacaoData.tecnologias.map(({ icon, title, desc }) => (
-            <TechCard key={title} icon={icon} title={title} desc={desc} />
-          ))}
-        </div>
-
-        {/* Link externo para GitHub */}
-        <div className="section-actions mt-2xl reveal">
-          <a
-            href={programacaoData.githubHref}
-            target="_blank"
-            rel="noopener"
-            className="external-link"
-          >
-            <i className="fab fa-github" /> Ver Projetos no GitHub
-          </a>
-        </div>
-
+      <div className="tech-grid">
+        {programacaoData.tecnologias.map((tech) => (
+          <TechCard key={tech.title} {...tech} />
+        ))}
       </div>
+
+      <h3 className="subsection-title reveal">Projetos</h3>
+      <div className="project-grid">
+        {programacaoData.projetos.map((projeto) => (
+          <ProjectCard key={projeto.title} {...projeto} />
+        ))}
+      </div>
+
+      <a
+        href={programacaoData.githubHref}
+        target="_blank"
+        rel="noreferrer"
+        className="btn btn-outline reveal"
+      >
+        <i className="fab fa-github" aria-hidden="true" />
+        Ver mais no GitHub
+      </a>
     </section>
   );
 }

@@ -1,18 +1,5 @@
-/* ============================================================================
-   PORTFOLIO.CSS - Estilos das Seções do Portfólio
-   ============================================================================
-   Estilos específicos para:
-   - Seções genéricas do portfólio
-   - Section headers com ícone
-   - Two column grid
-   - Programming tech cards
-   - Content boxes
-   - Contact section
-   ============================================================================ */
-
 /* ----------------------------------------------------------------------------
    PORTFOLIO SECTION
-   Seções com scroll snap
    ---------------------------------------------------------------------------- */
 .portfolio-section {
     min-height: 100vh;
@@ -28,7 +15,6 @@
 
 /* ----------------------------------------------------------------------------
    SECTION HEADER COM ÍCONE
-   Cabeçalho de seção com ícone circular
    ---------------------------------------------------------------------------- */
 .section-icon-header {
     display: flex;
@@ -67,7 +53,6 @@
 
 /* ----------------------------------------------------------------------------
    TWO COLUMN GRID
-   Layout de duas colunas
    ---------------------------------------------------------------------------- */
 .two-column-grid {
     display: grid;
@@ -78,7 +63,6 @@
 
 /* ----------------------------------------------------------------------------
    CONTENT BOX
-   Container genérico para conteúdo das seções
    ---------------------------------------------------------------------------- */
 .content-box {
     background: var(--gradient-glass);
@@ -90,7 +74,6 @@
     box-shadow: var(--shadow-lg);
 }
 
-/* Ações da seção (botões de download, etc) */
 .section-actions {
     display: flex;
     justify-content: center;
@@ -275,7 +258,6 @@
 
 /* ----------------------------------------------------------------------------
    SEÇÃO DE CONTATO
-   Estilos específicos do contato - espaçamento reduzido
    ---------------------------------------------------------------------------- */
 .contact-section {
     background: linear-gradient(180deg, var(--black-800), var(--black-900));

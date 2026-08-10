@@ -1,32 +1,32 @@
-/**
- * Seção de abertura do portfólio, com apresentação e principais ações.
- */
-
 import heroImage from '../assets/hero.jpg';
+import heroImageWebp from '../assets/hero.webp';
 import { heroData } from '../data/portfolio.js';
 
 export function Hero() {
   return (
     <section id="hero" className="hero" aria-labelledby="hero-title">
       <div className="hero-content">
-        <img
-          src={heroImage}
-          alt="Alan Kardec Lima Campos Júnior"
-          className="hero-avatar"
-          width="180"
-          height="180"
-          fetchPriority="high"
-        />
+        <picture>
+          <source srcSet={heroImageWebp} type="image/webp" />
+          <img
+            src={heroImage}
+            alt="Alan Kardec Lima Campos Júnior"
+            className="hero-avatar"
+            width="180"
+            height="180"
+            fetchPriority="high"
+          />
+        </picture>
 
         <h1 id="hero-title" className="hero-title">{heroData.title}</h1>
         <p className="hero-subtitle">{heroData.subtitle}</p>
 
         <div className="hero-badges" aria-label="Áreas de atuação">
-          {heroData.badges.map(({ label, icon, href }) => (
-            <a key={label} href={href} className="hero-badge">
+          {heroData.badges.map(({ label, icon }) => (
+            <span key={label} className="hero-badge">
               <i className={icon} aria-hidden="true" />
               {label}
-            </a>
+            </span>
           ))}
         </div>
 

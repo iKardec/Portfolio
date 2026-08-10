@@ -1,0 +1,96 @@
+/**
+ * ============================================================================
+ * sections.css — Layout de cada seção da página
+ * ============================================================================
+ */
+
+.portfolio-section {
+  max-width: var(--section-max-width);
+  margin: 0 auto;
+  padding: var(--section-padding-y) 1.5rem;
+}
+
+.portfolio-section .glass-card {
+  padding: 2rem;
+}
+
+/* Hero ------------------------------------------------------------------------ */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem 1.5rem;
+  position: relative;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  max-width: 640px;
+}
+
+.hero-avatar {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--color-surface-strong);
+  box-shadow: var(--shadow-glass);
+  margin-bottom: 0.5rem;
+}
+
+.hero-title {
+  font-size: clamp(2.25rem, 6vw, 3.5rem);
+}
+
+.hero-subtitle {
+  font-size: 1.15rem;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+  margin: 0.5rem 0 1.5rem;
+}
+
+.hero-cta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+/* Responsivo -------------------------------------------------------------------- */
+@media (max-width: 640px) {
+  .side-nav {
+    top: auto;
+    bottom: 1rem;
+    right: 50%;
+    transform: translateX(50%);
+    flex-direction: row;
+  }
+
+  .side-nav-dot.active {
+    transform: scale(1.3);
+  }
+}

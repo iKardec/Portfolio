@@ -1,51 +1,9 @@
-/* ============================================================================
-   MAIN.CSS - Arquivo Principal de Estilos
-   ============================================================================
-   Ponto de entrada para todos os estilos do projeto React.
-   Importa módulos na ordem correta para cascata de estilos.
+/**
+ * Ponto único de entrada dos estilos.
+ * Ordem da cascata: base (tokens/reset) → components (elementos reutilizáveis)
+ * → sections (layout de cada seção).
+ */
 
-   ORDEM DE IMPORTAÇÃO:
-   1. Base      - Reset, variáveis, tipografia (fundação)
-   2. Layout    - Estrutura de página (footer, containers, grids)
-   3. Components - Elementos reutilizáveis (botões, cards, badges)
-   4. Sections  - Estilos específicos de cada seção
-   5. Animations - Keyframes e efeitos visuais
-   6. Responsive - Media queries (sempre por último)
-   ============================================================================ */
-
-/* ============================================================================
-   1. FUNDAÇÃO
-   Reset CSS, variáveis de design e tipografia base
-   ============================================================================ */
 @import url('./base.css');
-
-/* ============================================================================
-   2. ESTRUTURA
-   Footer, containers e grid system
-   ============================================================================ */
-@import url('./layout.css');
-
-/* ============================================================================
-   3. COMPONENTES MODULARES
-   Botões, cards, badges, timeline, skills
-   Importa o índice que carrega todos os componentes
-   ============================================================================ */
-@import url('./components/index.css');
-
-/* ============================================================================
-   4. SEÇÕES ESPECÍFICAS
-   Estilos específicos: hero, portfolio sections
-   ============================================================================ */
-@import url('./sections/index.css');
-
-/* ============================================================================
-   5. ANIMAÇÕES
-   Keyframes, transições, efeitos visuais
-   ============================================================================ */
-@import url('./animations.css');
-
-/* ============================================================================
-   6. RESPONSIVIDADE
-   Media queries para todos os breakpoints - sempre por último
-   ============================================================================ */
-@import url('./responsive.css');
+@import url('./components.css');
+@import url('./sections.css');

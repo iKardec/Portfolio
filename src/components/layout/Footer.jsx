@@ -1,8 +1,3 @@
-/**
- * Footer - Rodapé do portfólio
- *
- * Exibe copyright e localização.
- */
 export function Footer() {
   const currentYear = new Date().getFullYear();
 

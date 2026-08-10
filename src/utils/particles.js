@@ -1,16 +1,3 @@
-/**
- * ============================================================================
- * utils/particles.js - Sistema de Partículas Animadas
- * ============================================================================
- * Classes Particle e ParticleSystem extraídas do projeto BASE como ES Modules.
- * Cria partículas flutuantes usando Canvas API para performance premium.
- * ============================================================================
- */
-
-// ============================================================================
-// CONFIGURAÇÃO
-// ============================================================================
-
 /** Configurações padrão do sistema de partículas */
 export const ParticlesConfig = {
   particleCount: 50,
@@ -43,19 +30,13 @@ export class Particle {
     this.opacity = Math.random() * 0.5 + 0.2;
   }
 
-  /**
-   * Atualiza posição e aplica interação com o mouse
-   * @param {{ x: number|null, y: number|null }} mouse
-   */
   update(mouse) {
     this.x += this.vx;
     this.y += this.vy;
 
-    // Bounce nas bordas do canvas
     if (this.x < 0 || this.x > this.canvas.width) this.vx *= -1;
     if (this.y < 0 || this.y > this.canvas.height) this.vy *= -1;
 
-    // Repulsão pelo mouse
     if (mouse.x && mouse.y) {
       const dx = mouse.x - this.x;
       const dy = mouse.y - this.y;
@@ -69,10 +50,6 @@ export class Particle {
     }
   }
 
-  /**
-   * Desenha a partícula no canvas
-   * @param {CanvasRenderingContext2D} ctx
-   */
   draw(ctx) {
     ctx.beginPath();
     ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
@@ -87,11 +64,6 @@ export class Particle {
 // CLASSE PARTICLE SYSTEM
 // ============================================================================
 
-/** Gerencia o sistema completo de partículas interativas */
-export class ParticleSystem {
-  /**
-   * @param {string} [containerId='particles-canvas']
-   */
   constructor(containerId = 'particles-canvas') {
     this.config = { ...ParticlesConfig };
     this.particles = [];
@@ -103,7 +75,7 @@ export class ParticleSystem {
     this._handleMouseMove = this._handleMouseMove.bind(this);
     this._handleMouseLeave = this._handleMouseLeave.bind(this);
 
-    // Reduz partículas em mobile para melhor performance
+    // Mobile
     if (window.innerWidth < 768) {
       this.config.particleCount = 25;
     }
@@ -111,7 +83,6 @@ export class ParticleSystem {
     this._init(containerId);
   }
 
-  /** Inicializa o canvas e os event listeners */
   _init(containerId) {
     this.canvas = document.createElement('canvas');
     this.canvas.id = containerId;
@@ -137,25 +108,21 @@ export class ParticleSystem {
     this._animate();
   }
 
-  /** Redimensiona o canvas ao viewport */
   _resize() {
     this.canvas.width = window.innerWidth;
     this.canvas.height = window.innerHeight;
   }
 
-  /** Atualiza a posição usada na interação entre cursor e partículas. */
   _handleMouseMove(event) {
     this.mouse.x = event.clientX;
     this.mouse.y = event.clientY;
   }
 
-  /** Limpa a interação quando o cursor deixa a janela. */
   _handleMouseLeave() {
     this.mouse.x = null;
     this.mouse.y = null;
   }
 
-  /** Cria o array inicial de partículas */
   _createParticles() {
     this.particles = [];
     for (let i = 0; i < this.config.particleCount; i++) {
@@ -163,7 +130,6 @@ export class ParticleSystem {
     }
   }
 
-  /** Desenha as linhas de conexão entre partículas próximas */
   _drawLines() {
     for (let i = 0; i < this.particles.length; i++) {
       for (let j = i + 1; j < this.particles.length; j++) {
@@ -185,7 +151,6 @@ export class ParticleSystem {
     }
   }
 
-  /** Loop de animação via requestAnimationFrame */
   _animate() {
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
     this.particles.forEach((p) => {
@@ -196,7 +161,6 @@ export class ParticleSystem {
     this.animationId = requestAnimationFrame(() => this._animate());
   }
 
-  /** Destrói o canvas e cancela a animação (cleanup) */
   destroy() {
     if (this.animationId) cancelAnimationFrame(this.animationId);
     window.removeEventListener('resize', this._handleResize);

@@ -1,14 +1,14 @@
 # Portfólio — Alan Kardec
 
-Portfólio profissional de Alan Kardec Lima Campos Júnior, desenvolvido em React. O projeto apresenta experiências em engenharia civil, desenvolvimento front-end, atendimento e gestão administrativa.
+Portfólio pessoal de Alan Kardec Lima Campos Júnior, **Desenvolvedor Fullstack Júnior**, desenvolvido em React 19 + Vite. Site de página única com apresentação, stack técnica, projetos e contato.
 
 ## Tecnologias
 
 - React 19
 - Vite 8
-- CSS vanilla organizado por responsabilidade
+- CSS vanilla organizado por responsabilidade (sem framework de CSS)
 - ESLint para análise estática
-- Font Awesome e Google Fonts
+- Font Awesome e Google Fonts (Space Grotesk + Inter)
 
 ## Como executar
 
@@ -29,44 +29,55 @@ npm run preview
 
 ## Estrutura do projeto
 
-```text
+```
 src/
-├── assets/                 # Imagens importadas pelos componentes
-├── components/
-│   ├── layout/             # Elementos estruturais, como navegação e rodapé
-│   └── ui/                 # Componentes visuais reutilizáveis
-├── data/portfolio.js       # Conteúdo e links centralizados
-├── hooks/                  # Efeitos React: partículas, tilt e scroll reveal
-├── sections/               # Seções de domínio do portfólio
-├── styles/                 # CSS em base, layout, components e sections
-├── utils/                  # Funções e classes independentes de React
-├── App.jsx                 # Composição da página
-└── main.jsx                # Ponto de entrada React
+├── assets/          # Imagens importadas pelos componentes
+├── components/       # Componentes de UI reutilizáveis (nav, cards, seções auxiliares)
+├── data/portfolio.js # Todo o conteúdo e links do site — edite aqui para atualizar textos
+├── hooks/             # Efeitos React (revelação ao rolar a página)
+├── sections/          # Hero, Sobre, Programação, Contato
+├── styles/            # CSS em base, components e sections
+├── App.jsx            # Composição da página
+└── main.jsx           # Ponto de entrada React
 
 public/
-├── downloads/              # Currículos disponibilizados ao visitante
-└── img/                    # Favicon e outros arquivos estáticos
-
-BASE/                       # Implementação estática original, preservada como referência
+├── downloads/          # Currículo em PDF disponibilizado ao visitante
+├── favicon.ico
+├── og-image.jpg         # Imagem de preview ao compartilhar o link
+├── robots.txt
+└── sitemap.xml
 ```
 
 ## Decisões de arquitetura
 
-- O conteúdo do currículo está em `src/data/portfolio.js`, separado da renderização para facilitar manutenção e revisão.
-- Os componentes de interface são pequenos e reutilizáveis; as seções apenas compõem dados e componentes.
-- Os estilos seguem uma cascata previsível: `base` → `layout` → `components` → `sections` → `animations` → `responsive`.
-- Efeitos que interagem com o DOM foram encapsulados em hooks e possuem limpeza ao desmontar o componente.
-- A pasta `BASE/` não participa do build nem do lint; ela conserva a fonte da migração.
+- Todo o conteúdo (textos, links, dados de projetos) está centralizado em `src/data/portfolio.js`, separado da renderização — para atualizar o portfólio, normalmente basta editar esse arquivo.
+- `src/components/` não é mais dividido em subpastas `ui/`/`layout/`: com poucos componentes, uma pasta única é mais rápida de escanear.
+- `src/styles/` foi consolidado em 3 arquivos (`base.css`, `components.css`, `sections.css`) em vez de várias subpastas — a cascata é `base` → `components` → `sections`.
+- O efeito visual assinatura é o `.glass-card` (superfície translúcida com `backdrop-filter`), usado em cards e na navegação lateral, seguindo uma estética minimalista com toque "Aero" (vidro, um único acento de azul, bastante espaço em branco).
+- A revelação de elementos ao rolar a página usa um único hook (`useScrollReveal`), respeitando `prefers-reduced-motion`.
+
+## Atualizando o currículo
+
+O botão "Baixar Currículo" do Hero aponta para um único arquivo, referenciado em `personalInfo.curriculoHref` (`src/data/portfolio.js`). Para trocar o currículo:
+
+1. Substitua o arquivo em `public/downloads/curriculo-alan-kardec-dev.pdf` pelo PDF atualizado, mantendo o mesmo nome — **ou**
+2. Salve o novo arquivo com outro nome e atualize `curriculoHref` em `src/data/portfolio.js` de acordo.
+
+## Adicionando projetos
+
+Projetos exibidos na seção "Programação" vêm do array `programacaoData.projetos` em `src/data/portfolio.js`. Cada item aceita `title`, `description`, `tags`, `href` (link do repositório/deploy) e `image` (screenshot, opcional — coloque o arquivo em `src/assets/` e importe-o antes de referenciar aqui).
 
 ## Scripts disponíveis
 
-| Comando | Finalidade |
-| --- | --- |
-| `npm run dev` | Inicia o servidor de desenvolvimento com HMR. |
-| `npm run build` | Gera os arquivos otimizados em `dist/`. |
-| `npm run preview` | Serve localmente o build de produção. |
-| `npm run lint` | Verifica erros e padrões de código com ESLint. |
+| Comando           | Finalidade                                     |
+| ----------------- | ----------------------------------------------- |
+| `npm run dev`     | Inicia o servidor de desenvolvimento com HMR.   |
+| `npm run build`   | Gera os arquivos otimizados em `dist/`.         |
+| `npm run preview` | Serve localmente o build de produção.           |
+| `npm run lint`    | Verifica erros e padrões de código com ESLint.  |
 
-## Manutenção
+## Antes de publicar
 
-Para atualizar textos, experiências, contatos ou links, edite apenas `src/data/portfolio.js`. Para criar uma nova área, adicione uma seção em `src/sections/`, mantenha o CSS específico em `src/styles/sections/` e componha-a em `src/App.jsx`.
+- Substitua `https://SEU-DOMINIO-AQUI/` em `index.html`, `public/robots.txt` e `public/sitemap.xml` pelo domínio real do site.
+- Substitua `public/downloads/curriculo-alan-kardec-dev.pdf` (placeholder) pelo currículo real.
+- Substitua `public/og-image.jpg` por uma imagem definitiva de preview, se desejar uma diferente da foto de perfil.

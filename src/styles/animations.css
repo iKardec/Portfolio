@@ -1,20 +1,4 @@
-/* ============================================================================
-   ANIMATIONS.CSS - Animações e Transições
-   ============================================================================
-   Este arquivo contém:
-   - Keyframes para animações
-   - Efeitos de entrada (fade, slide, scale)
-   - Animações de hover
-   - Efeitos de glow e pulso
-   - Animações de partículas
-   - Cursor personalizado
-   ============================================================================ */
 
-/* ----------------------------------------------------------------------------
-   ANIMAÇÕES DE ENTRADA - FADE
-   ---------------------------------------------------------------------------- */
-
-/* Fade In simples */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -25,7 +9,6 @@
     }
 }
 
-/* Fade In de baixo pra cima */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -38,7 +21,6 @@
     }
 }
 
-/* Fade In de cima pra baixo */
 @keyframes fadeInDown {
     from {
         opacity: 0;
@@ -51,7 +33,6 @@
     }
 }
 
-/* Fade In da esquerda */
 @keyframes fadeInLeft {
     from {
         opacity: 0;
@@ -64,7 +45,6 @@
     }
 }
 
-/* Fade In da direita */
 @keyframes fadeInRight {
     from {
         opacity: 0;
@@ -77,7 +57,6 @@
     }
 }
 
-/* Classes de aplicação */
 .animate-fade-in {
     animation: fadeIn 0.6s ease forwards;
 }
@@ -98,7 +77,6 @@
     animation: fadeInRight 0.6s ease forwards;
 }
 
-/* Delays para animações sequenciais */
 .delay-100 {
     animation-delay: 100ms;
 }
@@ -131,7 +109,6 @@
     animation-delay: 800ms;
 }
 
-/* Estado inicial para elementos animados */
 [class*="animate-fade"] {
     opacity: 0;
 }
@@ -140,7 +117,6 @@
    ANIMAÇÕES DE ESCALA
    ---------------------------------------------------------------------------- */
 
-/* Scale In */
 @keyframes scaleIn {
     from {
         opacity: 0;
@@ -153,7 +129,6 @@
     }
 }
 
-/* Scale In com bounce */
 @keyframes scaleInBounce {
     0% {
         opacity: 0;
@@ -186,7 +161,6 @@
    EFEITOS DE GLOW E PULSO
    ---------------------------------------------------------------------------- */
 
-/* Pulso de glow */
 @keyframes glowPulse {
 
     0%,
@@ -203,7 +177,6 @@
     }
 }
 
-/* Pulso de texto com glow */
 @keyframes textGlowPulse {
 
     0%,
@@ -218,7 +191,6 @@
     }
 }
 
-/* Pulso de borda */
 @keyframes borderPulse {
 
     0%,
@@ -231,7 +203,6 @@
     }
 }
 
-/* Classes de aplicação */
 .animate-glow-pulse {
     animation: glowPulse 3s ease-in-out infinite;
 }
@@ -248,7 +219,6 @@
    ANIMAÇÃO DE FLUTUAÇÃO
    ---------------------------------------------------------------------------- */
 
-/* Flutuação suave */
 @keyframes float {
 
     0%,
@@ -261,7 +231,6 @@
     }
 }
 
-/* Flutuação com rotação */
 @keyframes floatRotate {
 
     0%,
@@ -329,7 +298,6 @@
    ANIMAÇÃO DE TYPING (DIGITAÇÃO)
    ---------------------------------------------------------------------------- */
 
-/* Cursor piscando */
 @keyframes blink {
 
     0%,
@@ -343,13 +311,11 @@
     }
 }
 
-/* Container do typing effect */
 .typing-container {
     display: inline-block;
     position: relative;
 }
 
-/* Texto com efeito typing */
 .typing-text {
     display: inline-block;
     overflow: hidden;
@@ -370,7 +336,6 @@
     }
 }
 
-/* Múltiplas linhas de typing */
 .typing-text-1 {
     animation-delay: 0s;
 }
@@ -387,7 +352,6 @@
    ANIMAÇÃO DE PARTÍCULAS (CSS)
    ---------------------------------------------------------------------------- */
 
-/* Container de partículas */
 .particles-container {
     position: fixed;
     top: 0;
@@ -399,7 +363,6 @@
     z-index: var(--z-background);
 }
 
-/* Partícula individual */
 .particle {
     position: absolute;
     width: 6px;
@@ -430,7 +393,6 @@
     }
 }
 
-/* Variações de partículas */
 .particle:nth-child(1) {
     left: 5%;
     animation-delay: 0s;
