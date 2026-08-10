@@ -1,0 +1,13 @@
+/* ============================================================================
+   COMPONENTS/INDEX.CSS - Índice de Componentes CSS
+   ============================================================================
+   Importa todos os componentes na ordem correta.
+   ============================================================================ */
+
+@import url('./buttons.css');
+@import url('./cards.css');
+@import url('./badges.css');
+@import url('./links.css');
+@import url('./skills.css');
+@import url('./timeline.css');
+@import url('./dividers.css');

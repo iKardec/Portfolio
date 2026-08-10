@@ -88,7 +88,7 @@ span {
   --orange-500: #ff9800;      /* Laranja principal */
   --orange-600: #f57c00;      /* Laranja escuro */
   --orange-700: #e65100;      /* Laranja muito escuro */
-  
+
   /* Efeitos de brilho laranja */
   --orange-glow-soft: rgba(255, 152, 0, 0.15);
   --orange-glow-medium: rgba(255, 152, 0, 0.3);
@@ -103,7 +103,7 @@ span {
   --black-600: #2a2a2a;       /* Cards */
   --black-500: #3a3a3a;       /* Bordas */
   --black-400: #4a4a4a;       /* Bordas hover */
-  
+
   /* Tons de cinza para texto */
   --gray-600: #757575;        /* Texto terciário */
   --gray-500: #9e9e9e;        /* Texto secundário escuro */
@@ -179,7 +179,7 @@ span {
   --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-heading: 'Space Grotesk', var(--font-primary);
   --font-accent: 'Outfit', var(--font-primary);
-  
+
   /* Tamanhos de fonte */
   --text-xs: 0.75rem;         /* 12px */
   --text-sm: 0.875rem;        /* 14px */
@@ -201,10 +201,7 @@ span {
   --font-extrabold: 800;
 
   /* === DIMENSÕES === */
-  --header-height: 180px;
-  --header-height-minimized: 80px;
   --container-max-width: 1200px;
-  --sidebar-width: 280px;
 }
 
 /* ----------------------------------------------------------------------------
@@ -227,7 +224,7 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: 
+  background:
     radial-gradient(ellipse at top, var(--orange-glow-soft) 0%, transparent 50%),
     radial-gradient(ellipse at bottom right, rgba(255, 152, 0, 0.05) 0%, transparent 40%);
   pointer-events: none;
@@ -246,31 +243,12 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--color-text-primary);
 }
 
-h1 {
-  font-size: var(--text-5xl);
-  letter-spacing: -0.02em;
-}
-
-h2 {
-  font-size: var(--text-4xl);
-  letter-spacing: -0.01em;
-}
-
-h3 {
-  font-size: var(--text-2xl);
-}
-
-h4 {
-  font-size: var(--text-xl);
-}
-
-h5 {
-  font-size: var(--text-lg);
-}
-
-h6 {
-  font-size: var(--text-base);
-}
+h1 { font-size: var(--text-5xl); letter-spacing: -0.02em; }
+h2 { font-size: var(--text-4xl); letter-spacing: -0.01em; }
+h3 { font-size: var(--text-2xl); }
+h4 { font-size: var(--text-xl); }
+h5 { font-size: var(--text-lg); }
+h6 { font-size: var(--text-base); }
 
 /* Parágrafos */
 p {
@@ -352,18 +330,18 @@ strong, b {
 /* ----------------------------------------------------------------------------
    UTILITÁRIOS DE TEXTO
    ---------------------------------------------------------------------------- */
-.text-center { text-align: center; }
-.text-left { text-align: left; }
-.text-right { text-align: right; }
+.text-center  { text-align: center; }
+.text-left    { text-align: left; }
+.text-right   { text-align: right; }
 .text-justify { text-align: justify; }
 
-.text-primary { color: var(--color-primary); }
+.text-primary   { color: var(--color-primary); }
 .text-secondary { color: var(--color-text-secondary); }
-.text-muted { color: var(--color-text-muted); }
-.text-light { color: var(--color-text-primary); }
+.text-muted     { color: var(--color-text-muted); }
+.text-light     { color: var(--color-text-primary); }
 
-.font-light { font-weight: var(--font-light); }
-.font-regular { font-weight: var(--font-regular); }
-.font-medium { font-weight: var(--font-medium); }
+.font-light    { font-weight: var(--font-light); }
+.font-regular  { font-weight: var(--font-regular); }
+.font-medium   { font-weight: var(--font-medium); }
 .font-semibold { font-weight: var(--font-semibold); }
-.font-bold { font-weight: var(--font-bold); }
+.font-bold     { font-weight: var(--font-bold); }
