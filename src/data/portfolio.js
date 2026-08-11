@@ -1,3 +1,6 @@
+import portfolioPrint from '../assets/portfolio_print.webp';
+import jericoPrint from '../assets/landing_jerico_print.webp';
+
 export const personalInfo = {
   name: 'Alan Kardec',
   fullName: 'Alan Kardec Lima Campos Júnior',
@@ -70,14 +73,14 @@ export const programacaoData = {
       description: 'Site pessoal construído com React + Vite',
       tags: ['React', 'Vite', 'CSS'],
       href: 'https://github.com/iKardec/Portfolio',
-      image: 'src/assets/portfolio_print.png',
+      image: portfolioPrint,
     },
     {
       title: 'Landing Page - Jericó Multibank',
       description: 'Landing Page construída para a empresa Jericó Multibank',
       tags: ['Vanilla', 'HTML', 'CSS'],
       href: 'https://github.com/iKardec/JERICO-main-site-sub',
-      image: 'src/assets/landing_jerico_print.png',
+      image: jericoPrint,
     },
   ],
   githubHref: personalInfo.github,
