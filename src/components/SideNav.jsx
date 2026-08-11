@@ -1,13 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { sideNavDots } from '../data/portfolio.js';
 
-/**
- * SideNav — navegação lateral por "dots".
- *
- * Refatorado para usar refs em vez de `document.querySelectorAll`:
- * cada dot e cada seção mantém uma referência própria, e o estado do
- * dot ativo vive em `useState`, seguindo o padrão idiomático do React.
- */
 export function SideNav() {
   const [activeSection, setActiveSection] = useState(sideNavDots[0].section);
   const sectionRefs = useRef({});

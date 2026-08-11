@@ -7,14 +7,8 @@ export const personalInfo = {
   linkedin: 'https://www.linkedin.com/in/kardecjr',
   email: 'kardec2710@gmail.com',
   whatsapp: 'https://wa.me/5571988396237',
-  // Currículo único — substitua o arquivo em public/downloads/ mantendo este nome,
-  // ou atualize o caminho abaixo se usar outro nome de arquivo.
   curriculoHref: '/downloads/curriculo-alan-kardec-dev.pdf',
 };
-
-// ----------------------------------------------------------------------------
-// Seção Hero
-// ----------------------------------------------------------------------------
 
 export const heroData = {
   title: 'Alan Kardec',
@@ -42,17 +36,12 @@ export const heroData = {
   ],
 };
 
-// ----------------------------------------------------------------------------
-// Seção Sobre Mim
-// ----------------------------------------------------------------------------
-
 export const sobreData = {
   paragraphs: [
     `Sou desenvolvedor fullstack júnior, atualmente cursando Bacharelado Interdisciplinar
     em Ciência e Tecnologia na <strong>UFBA</strong>.`,
-    `Comecei a programar em 2013, evoluindo por HTML, JavaScript e Python até chegar ao
-    desenvolvimento web moderno com <strong>React</strong>. Este próprio portfólio é
-    construído com React e Vite.`,
+    `Comecei a programar em 2025, evoluindo por HTML, JavaScript, Python e Java até chegar ao
+    desenvolvimento web moderno com <strong>React</strong>.`,
     `Gosto de resolver problemas de ponta a ponta: interface, lógica e organização de
     código. Busco constantemente aprender novas ferramentas e boas práticas.`,
   ],
@@ -63,44 +52,36 @@ export const sobreData = {
   ],
 };
 
-// ----------------------------------------------------------------------------
-// Seção Programação — stack técnica e projetos
-// ----------------------------------------------------------------------------
-
 export const programacaoData = {
   intro: `Foco em <strong>desenvolvimento Front-End</strong> com React, complementado por
-    Back-End em Python. Este portfólio foi construído com <strong>React 19 e Vite</strong>,
+    <strong>Back-End em Java </strong>. Este portfólio foi construído com <strong>React 19 e Vite</strong>,
     a mesma stack listada abaixo.`,
   tecnologias: [
-    { icon: 'fab fa-react', title: 'React & Vite', desc: 'Interfaces modernas e componentizadas — usado neste site' },
+    { icon: 'fab fa-react', title: 'React & Vite', desc: 'Interfaces modernas e componentizadas' },
     { icon: 'fab fa-html5', title: 'HTML5 & CSS3', desc: 'Estrutura semântica e estilização avançada' },
     { icon: 'fab fa-js-square', title: 'JavaScript', desc: 'Interatividade e lógica de aplicações web' },
+    { icon: 'fa-solid fa-database', title: 'SQL', desc: 'Banco de dados e querries' },
     { icon: 'fab fa-python', title: 'Python', desc: 'Automações, back-end e aplicações desktop' },
+    { icon: 'fab fa-java', title: 'Java', desc: 'APIs, back-end e sistemas' },
   ],
-  // Projetos reais com link e/ou imagem — troque os placeholders pelos seus.
   projetos: [
     {
       title: 'Este Portfólio',
-      description: 'Site pessoal construído com React 19 + Vite, com dados centralizados e CSS organizado por responsabilidade.',
+      description: 'Site pessoal construído com React + Vite',
       tags: ['React', 'Vite', 'CSS'],
       href: 'https://github.com/iKardec/Portfolio',
-      image: null, // adicione um screenshot em src/assets/ e referencie aqui
+      image: 'src/assets/portfolio_print.png',
     },
     {
-      title: 'RFCC',
-      description: 'Software para dimensionamento de reforço estrutural com fibra de carbono em vigas.',
-      tags: ['Python'],
-      href: null, // adicione o link do repositório quando disponível
-      image: null,
+      title: 'Landing Page - Jericó Multibank',
+      description: 'Landing Page construída para a empresa Jericó Multibank',
+      tags: ['Vanilla', 'HTML', 'CSS'],
+      href: 'https://github.com/iKardec/JERICO-main-site-sub',
+      image: 'src/assets/landing_jerico_print.png',
     },
-    // Adicione mais projetos aqui seguindo o mesmo formato.
   ],
   githubHref: personalInfo.github,
 };
-
-// ----------------------------------------------------------------------------
-// Seção Contato
-// ----------------------------------------------------------------------------
 
 export const contatoData = {
   links: [
@@ -110,10 +91,6 @@ export const contatoData = {
     { icon: 'fab fa-whatsapp', label: 'WhatsApp', href: personalInfo.whatsapp },
   ],
 };
-
-// ----------------------------------------------------------------------------
-// Navegação lateral
-// ----------------------------------------------------------------------------
 
 export const sideNavDots = [
   { section: 'hero', tooltip: 'Início' },

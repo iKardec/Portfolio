@@ -1,9 +1,3 @@
-/**
- * ============================================================================
- * sections.css — Layout de cada seção da página
- * ============================================================================
- */
-
 .portfolio-section {
   max-width: var(--section-max-width);
   margin: 0 auto;
@@ -14,7 +8,7 @@
   padding: 2rem;
 }
 
-/* Hero ------------------------------------------------------------------------ */
+/* Hero */
 .hero {
   min-height: 100vh;
   display: flex;
@@ -80,7 +74,7 @@
   color: var(--color-text-muted);
 }
 
-/* Responsivo -------------------------------------------------------------------- */
+/* Responsivo */
 @media (max-width: 640px) {
   .side-nav {
     top: auto;

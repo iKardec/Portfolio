@@ -1,12 +1,8 @@
-/**
- * ============================================================================
- * components.css — Botões, badges, tags, nav, cards
- * ============================================================================
- * Consolidado num único arquivo (antes eram 7 arquivos em styles/components/).
- * ============================================================================
- */
+.section-title {
+  margin: 20px 0px;
+}
 
-/* Botões -------------------------------------------------------------------- */
+/* Botões */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -42,7 +38,7 @@
   -webkit-backdrop-filter: var(--blur-glass);
 }
 
-/* Badges do Hero -------------------------------------------------------------- */
+/* Badges do Hero */
 .hero-badge {
   display: inline-flex;
   align-items: center;
@@ -55,7 +51,7 @@
   font-weight: 600;
 }
 
-/* Tags (Sobre Mim) ------------------------------------------------------------ */
+/* Tags (Sobre Mim) */
 .skill-tags {
   display: flex;
   flex-wrap: wrap;
@@ -79,7 +75,7 @@
   color: var(--color-accent);
 }
 
-/* Navegação lateral (dots em cápsula de vidro) -------------------------------- */
+/* Navegação lateral (dots em cápsula de vidro) */
 .side-nav {
   position: fixed;
   top: 50%;
@@ -120,7 +116,7 @@
   transform: scale(1.3);
 }
 
-/* Cabeçalho de seção ------------------------------------------------------------ */
+/* Cabeçalho de seção */
 .section-eyebrow {
   display: block;
   font-size: 0.8rem;
@@ -140,7 +136,7 @@
   margin-bottom: 2rem;
 }
 
-/* Cards de tecnologia -------------------------------------------------------------- */
+/* Cards de tecnologia */
 .tech-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -168,7 +164,7 @@
   margin: 0;
 }
 
-/* Cards de projeto ------------------------------------------------------------------ */
+/* Cards de projeto */
 .subsection-title {
   font-size: 1.3rem;
   margin-bottom: 1rem;
@@ -242,7 +238,7 @@
   color: var(--color-accent);
 }
 
-/* Links de contato ------------------------------------------------------------------- */
+/* Links de contato */
 .contact-links {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -267,7 +263,7 @@
   color: var(--color-accent);
 }
 
-/* Rodapé --------------------------------------------------------------------------- */
+/* Rodapé */
 .footer {
   text-align: center;
   padding: 2.5rem 1rem;

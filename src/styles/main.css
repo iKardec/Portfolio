@@ -1,9 +1,3 @@
-/**
- * Ponto único de entrada dos estilos.
- * Ordem da cascata: base (tokens/reset) → components (elementos reutilizáveis)
- * → sections (layout de cada seção).
- */
-
 @import url('./base.css');
 @import url('./components.css');
 @import url('./sections.css');

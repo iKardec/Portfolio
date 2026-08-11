@@ -1,6 +1,6 @@
 
 :root {
-  /* Paleta ------------------------------------------------------------- */
+  /* Paleta */
   --color-bg: #a8cff5;
   --color-bg-deep: #e1ecf8;
   --color-surface: rgba(255, 255, 255, 0.55);
@@ -11,11 +11,11 @@
   --color-accent-soft: #cfe3fb;
   --color-border: rgba(255, 255, 255, 0.65);
 
-  /* Tipografia ----------------------------------------------------------- */
+  /* Tipografia */
   --font-display: 'Space Grotesk', system-ui, sans-serif;
   --font-body: 'Inter', system-ui, sans-serif;
 
-  /* Espaçamento e forma ---------------------------------------------------- */
+  /* Espaçamento e forma */
   --radius-md: 16px;
   --radius-lg: 24px;
   --shadow-glass: 0 8px 32px rgba(22, 35, 46, 0.08);
