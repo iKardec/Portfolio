@@ -76,10 +76,9 @@ export const programacaoData = {
       image: portfolioPrint,
     },
     {
-      title: 'Landing Page - Jericó Multibank',
-      description: 'Landing Page construída para a empresa Jericó Multibank',
+      title: 'Landing Page — Desenvolvimento Front-End',
+      description: 'Landing page desenvolvida para um sistema corporativo, com foco em interface, responsividade e experiência do usuário',
       tags: ['Vanilla', 'HTML', 'CSS'],
-      href: 'https://github.com/iKardec/JERICO-main-site-sub',
       image: jericoPrint,
     },
   ],

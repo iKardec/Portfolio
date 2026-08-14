@@ -33,7 +33,9 @@ export function ProjectCard({ title, description, tags, href, image }) {
 
         {href && (
           <span className="project-card-link">
-            Ver projeto <i className="fas fa-arrow-right" aria-hidden="true" />
+              <>
+                Ver projeto <i className="fas fa-arrow-right" aria-hidden="true" />
+              </>
           </span>
         )}
       </div>
