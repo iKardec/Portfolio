@@ -1,10 +1,11 @@
 import portfolioPrint from '../assets/portfolio_print.webp';
 import jericoPrint from '../assets/landing_jerico_print.webp';
+import daycountPrint from '../assets/daycount_print.webp';
 
 export const personalInfo = {
   name: 'Alan Kardec',
   fullName: 'Alan Kardec Lima Campos Júnior',
-  role: 'Desenvolvedor Fullstack Júnior',
+  role: 'Desenvolvedor Fullstack',
   location: 'Salvador - BA, Brasil',
   github: 'https://github.com/iKardec',
   linkedin: 'https://www.linkedin.com/in/kardecjr',
@@ -15,7 +16,7 @@ export const personalInfo = {
 
 export const heroData = {
   title: 'Alan Kardec',
-  subtitle: 'Desenvolvedor Fullstack Júnior',
+  subtitle: 'Desenvolvedor Fullstack',
   badges: [
     { label: 'Front-End', icon: 'fas fa-code' },
     { label: 'React & Vite', icon: 'fab fa-react' },
@@ -41,10 +42,10 @@ export const heroData = {
 
 export const sobreData = {
   paragraphs: [
-    `Sou desenvolvedor fullstack júnior, atualmente cursando Bacharelado Interdisciplinar
+    `Sou desenvolvedor fullstack com foco em front-end, atualmente cursando Bacharelado Interdisciplinar
     em Ciência e Tecnologia na <strong>UFBA</strong>.`,
     `Comecei a programar em 2025, evoluindo por HTML, JavaScript, Python e Java até chegar ao
-    desenvolvimento web moderno com <strong>React</strong>.`,
+    desenvolvimento web moderno com <strong>React e Angular</strong>.`,
     `Gosto de resolver problemas de ponta a ponta: interface, lógica e organização de
     código. Busco constantemente aprender novas ferramentas e boas práticas.`,
   ],
@@ -61,11 +62,15 @@ export const programacaoData = {
     a mesma stack listada abaixo.`,
   tecnologias: [
     { icon: 'fab fa-react', title: 'React & Vite', desc: 'Interfaces modernas e componentizadas' },
+    { icon: 'fab fa-angular', title: 'Angular', desc: 'Aplicações web escaláveis e componentizadas' },
     { icon: 'fab fa-html5', title: 'HTML5 & CSS3', desc: 'Estrutura semântica e estilização avançada' },
+    { icon: 'fab fa-sass', title: 'SCSS', desc: 'Estilização modular, reutilizável e organizada' },
     { icon: 'fab fa-js-square', title: 'JavaScript', desc: 'Interatividade e lógica de aplicações web' },
+    { icon: 'fas fa-code', title: 'TypeScript', desc: 'Tipagem estática e desenvolvimento web escalável' },
     { icon: 'fa-solid fa-database', title: 'SQL', desc: 'Banco de dados e querries' },
     { icon: 'fab fa-python', title: 'Python', desc: 'Automações, back-end e aplicações desktop' },
-    { icon: 'fab fa-java', title: 'Java', desc: 'APIs, back-end e sistemas' },
+    { icon: 'fab fa-java', title: 'Java', desc: 'APIs, back-end e sistemas' }
+
   ],
   projetos: [
     {
@@ -76,10 +81,24 @@ export const programacaoData = {
       image: portfolioPrint,
     },
     {
-      title: 'Landing Page — Desenvolvimento Front-End',
+      title: 'Landing Page',
       description: 'Landing page desenvolvida para um sistema corporativo, com foco em interface, responsividade e experiência do usuário',
       tags: ['Vanilla', 'HTML', 'CSS'],
       image: jericoPrint,
+    },
+        {
+      title: 'DayCount',
+      description: 'Uma aplicação web desenvolvida para acompanhar a quantidade de dias de forma organizada',
+      tags: ['React', 'LocalStorage', 'CSS'],
+      href: 'https://ikardec.github.io/Day-Count/',
+      image: daycountPrint,
+    },
+      {
+      title: 'CryptoTracker',
+      description: 'Um site web para acompanhar preços e variações de criptomoedas',
+      tags: ['Angular', 'Consumo de API', 'SCSS'],
+      href: 'https://ikardec.github.io/CryptoTracker/',
+      image: '',
     },
   ],
   githubHref: personalInfo.github,
